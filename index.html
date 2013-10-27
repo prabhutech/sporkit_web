@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link href="js/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="http://bootswatch.com/cosmo/bootstrap.css" rel="stylesheet" media="screen">
+
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="js/libs/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular.js"></script>
+        <script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-resource.js"></script>
+        <script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-sanitize.js"></script>
+        <script type="text/javascript" src="https://www.parsecdn.com/js/parse-1.2.7.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/services.js"></script>
+        <script type="text/javascript" src="js/ctrl.js"></script>
+        <script type="text/javascript" src="js/controllers/MyPlateController.js"></script>
+        <script type="text/javascript" src="js/controllers/SearchController.js"></script>
+        <script type="text/javascript" src="js/controllers/TakePhotoController.js"></script>
+        <title>Login App</title>
+    </head>
+    <body>
+        <div id="fb-root"></div>
+        <div ng-controller="SporkitAppController">
+            
+            <button ng-click="login()" ng-hide="isLoggedIn">
+                Facebook Login
+            </button>
+            <br>
+            <button ng-click="logout()" ng-show="isLoggedIn">
+                Facebook Logout
+            </button>
+            <br>
+            <button ng-click="getInfo()" ng-show="isLoggedIn">
+                Get info
+            </button>
+            <hr>
+            <button ng-click="getLoginStatus()" ng-show="isLoggedIn">
+                Get info
+            </button>
+            <button ng-click="unsubscribe()" ng-show="isLoggedIn">
+                unsubscribe
+            </button>
+            <hr>
+            facebook status: {{loginStatusObj.status}}
+            <ul>
+                <li ng-repeat="item in session">
+                    {{item}}
+                </li>
+            </ul>
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <a class="brand" href="#">Spork.it</a>
+                    <ul class="nav">
+                        <li>
+                            <a href="#/myplate">My Plate</a>
+                        </li>
+                        <li>
+                            <a href="#/takephoto">Take Photo</a>
+                        </li>
+                        <li>
+                            <a href="#/search">Search</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div ng-view></div>
+        </div>
+    </body>
+</html>
