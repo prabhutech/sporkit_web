@@ -37,6 +37,8 @@ SporkitApp.config(function($routeProvider) {
         templateUrl : 'views/TakePhoto.html'
     }).when('/search', {
         templateUrl : 'views/Search.html'
+    }).when('/profile', {
+        templateUrl : 'views/Profile.html'
     });
 }); 
 

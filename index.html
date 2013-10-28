@@ -6,6 +6,7 @@
         <link href="js/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="http://bootswatch.com/cosmo/bootstrap.css" rel="stylesheet" media="screen">
 
+        <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="js/libs/bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular.js"></script>
@@ -18,37 +19,12 @@
         <script type="text/javascript" src="js/controllers/MyPlateController.js"></script>
         <script type="text/javascript" src="js/controllers/SearchController.js"></script>
         <script type="text/javascript" src="js/controllers/TakePhotoController.js"></script>
-        <title>Login App</title>
+        <script type="text/javascript" src="js/controllers/ProfileController.js"></script>
+        <title>Spork.it</title>
     </head>
     <body>
         <div id="fb-root"></div>
         <div ng-controller="SporkitAppController">
-            
-            <button ng-click="login()" ng-hide="isLoggedIn">
-                Facebook Login
-            </button>
-            <br>
-            <button ng-click="logout()" ng-show="isLoggedIn">
-                Facebook Logout
-            </button>
-            <br>
-            <button ng-click="getInfo()" ng-show="isLoggedIn">
-                Get info
-            </button>
-            <hr>
-            <button ng-click="getLoginStatus()" ng-show="isLoggedIn">
-                Get info
-            </button>
-            <button ng-click="unsubscribe()" ng-show="isLoggedIn">
-                unsubscribe
-            </button>
-            <hr>
-            facebook status: {{loginStatusObj.status}}
-            <ul>
-                <li ng-repeat="item in session">
-                    {{item}}
-                </li>
-            </ul>
             <div class="navbar">
                 <div class="navbar-inner">
                     <a class="brand" href="#">Spork.it</a>
@@ -62,9 +38,24 @@
                         <li>
                             <a href="#/search">Search</a>
                         </li>
+                        <li>
+                            <a href="#/profile">Profile</a>
+                        </li>
                     </ul>
                 </div>
             </div>
+            <hr>
+            <button ng-click="login()" ng-hide="isLoggedIn">
+                Facebook Login
+            </button>
+            <button ng-click="logout()" ng-show="isLoggedIn">
+                Facebook Logout
+            </button>
+            <button ng-click="getLoginStatus()" ng-show="isLoggedIn">
+                Get info
+            </button>
+            facebook status: {{loginStatusObj.status}}
+            <hr>
             <div ng-view></div>
         </div>
     </body>

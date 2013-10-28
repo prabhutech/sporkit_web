@@ -1,7 +1,24 @@
 var FacebookProvider = angular.module('FacebookProvider', []);
 FacebookProvider.service('Facebook', function($rootScope) {
-    currentUser = Parse.User.current();
+    var createResponse = function(id, response) {
+        if (response) {
+            $rootScope.$broadcast(id + '-onsuccess', response);
+        } else {
+            $rootScope.$broadcast(id + '-onerror');
+        }
+    };
     return {
+        currentUser : Parse.User.current(),
+        userInfo : function() {
+            FB.api("/me", function(response) {
+                createResponse('fb-get-userinfo', response);
+            });
+        },
+        getFriends : function() {
+            FB.api('/me/friends', function(response) {
+                createResponse('fb-get-friends', response);
+            });
+        },
         getLoginStatus : function() {
             FB.getLoginStatus(function(response) {
                 $rootScope.$broadcast('get-fb-login-status', response);
@@ -38,5 +55,6 @@ FacebookProvider.service('Facebook', function($rootScope) {
             });
         }
     };
+    return promise;
 });
 

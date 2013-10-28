@@ -1,7 +1,21 @@
 SporkitApp.controller('SporkitAppController', ['$scope', 'Facebook',
 function($scope, Facebook) {
 
+    $scope.currentUser = Facebook.currentUser;
     $scope.isLoggedIn = false;
+
+    $scope.login = function() {
+        Facebook.login();
+    };
+    $scope.logout = function() {
+        Facebook.logout();
+    };
+    $scope.unsubscribe = function() {
+        Facebook.unsubscribe();
+    };
+    $scope.getLoginStatus = function() {
+        Facebook.getLoginStatus();
+    };
 
     $scope.$on('get-fb-login-status', function(event, response) {
         $scope.loginStatusObj = response;
@@ -24,35 +38,17 @@ function($scope, Facebook) {
             $scope.isLoggedIn = false;
         }
         console.log($scope.isLoggedIn);
-        $scope.$apply();
+        if (!$scope.$$phase) {
+            $scope.$apply();
+        }
     });
 
     $scope.$on('fb-login-onsuccess', function(event, response) {
         Facebook.getLoginStatus();
     });
 
-    // button functions
-
-    $scope.login = function() {
-        Facebook.login();
-    };
-
-    $scope.logout = function() {
-        Facebook.logout();
-    };
-
-    $scope.unsubscribe = function() {
-        Facebook.unsubscribe();
-    };
-
-    $scope.getInfo = function() {
-        FB.api('/' + $scope.session.facebook_id, function(response) {
-            console.log('Good to see you, ' + response.name + '.');
-        });
-    };
-
-    $scope.getLoginStatus = function() {
+    $scope.$on('fb-logout-onsuccess', function(event, response) {
         Facebook.getLoginStatus();
-    };
+    });
 
-}]); 
+}]);
