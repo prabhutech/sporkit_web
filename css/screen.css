@@ -1,0 +1,56 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	background: url(../img/bg.gif) repeat left top;
+	font-size: 80% !important;
+	color: #333;
+}
+h1 {
+	font-family: 'Concert One', cursive !important;
+	margin: 0px !important;	
+}
+hr.clear {
+	margin: 0px;
+	padding: 0px;
+	clear: both;
+	float: none;
+	visibility: hidden;
+}
+.logo-block {
+	text-align: center;
+	padding: 20px 0px;
+	font-family: 'Concert One', cursive !important;
+	font-size: 1.1em;
+}
+.sidebar-nav {
+	border: 1px solid #debc9d !important;
+	-moz-box-shadow:    inset 0 0 5px #cba887 !important;
+   	-webkit-box-shadow: inset 0 0 5px #cba887 !important;
+   	box-shadow:         inset 0 0 5px #cba887 !important;
+}
+.main-well {
+	border: 1px solid #debc9d !important;
+	-moz-box-shadow:    inset 0 0 5px #cba887 !important;
+   	-webkit-box-shadow: inset 0 0 5px #cba887 !important;
+   	box-shadow:         inset 0 0 5px #cba887 !important;
+	margin: 20px 0px !important;
+}
+.sidebar-nav .profile-pic {
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+.sidebar-nav dl {
+	margin-bottom: 30px;
+}
+.sidebar-nav dd {
+	margin: 0px; padding: 0px;	
+}
+a {
+	color: #cba887 !important;	
+}
+.nav-list > .active > a {
+	background-color: #333 !important;	
+	color: #fff !important;
+}
+.nav-list > .active > a:hover 
