@@ -1,5 +1,7 @@
 var FacebookProvider = angular.module('FacebookProvider', []);
 FacebookProvider.service('Facebook', function($rootScope) {
+    var Food = Parse.Object.extend("Food");
+    var foodQuery = new Parse.Query(Food);
     var createResponse = function(id, response) {
         if (response) {
             $rootScope.$broadcast(id + '-onsuccess', response);
@@ -17,6 +19,12 @@ FacebookProvider.service('Facebook', function($rootScope) {
         getFriends : function() {
             FB.api('/me/friends', function(response) {
                 createResponse('fb-get-friends', response);
+            });
+        },
+        getAllFoods : function(user) {
+            foodQuery.equalTo("createdBy", user);
+            foodQuery.find(function(response){
+                createResponse('get-all-foods', response);
             });
         },
         getLoginStatus : function() {

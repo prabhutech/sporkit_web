@@ -33,6 +33,8 @@ SporkitApp.run(function($rootScope) {
 SporkitApp.config(function($routeProvider) {
     $routeProvider.when('/', {
         templateUrl : 'views/MyPlate.html'
+    }).when('/myplate', {
+        templateUrl : 'views/MyPlate.html'
     }).when('/takephoto', {
         templateUrl : 'views/TakePhoto.html'
     }).when('/search', {

@@ -1,12 +1,15 @@
 SporkitApp.controller('MyPlateController', ['$scope', 'Facebook',
 function($scope, Facebook) {
-    var Users = Parse.Object.extend("User");
-    var Foods = Parse.Object.extend("Food");
+    Facebook.getAllFoods($scope.currentUser);
 
-    var currentUser = Facebook.currentUser;
-    var food = new Foods({
-        name : "Fish fry"
+    $scope.$on('get-all-foods-onsuccess', function(event, response) {
+        console.log(response);
+        for (var key in response) {
+            console.log(response[key].attributes.name);
+        }
+        $scope.foods = response;
+        if (!$scope.$$phase) {
+            $scope.$apply();
+        }
     });
-    food.relation("createdBy").add(currentUser);
-    food.save();
 }]);

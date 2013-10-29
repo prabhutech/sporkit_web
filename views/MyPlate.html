@@ -1,3 +1,7 @@
 <div  ng-controller="MyPlateController">
-    d
+    <table>
+        <tr ng-repeat="(key, value) in foods">
+            <td>{{key}} - {{value}}</td>
+        </tr>
+    </table>
 </div>
