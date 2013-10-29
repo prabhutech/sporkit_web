@@ -1,0 +1,29 @@
+Home page
+<div class="navbar">
+    <div class="navbar-inner">
+        <a class="brand" href="#">Spork.it</a>
+        <ul class="nav">
+            <li>
+                <a href="#/myplate">My Plate</a>
+            </li>
+            <li>
+                <a href="#/takephoto">Take Photo</a>
+            </li>
+            <li>
+                <a href="#/search">Search</a>
+            </li>
+            <li>
+                <a href="#/profile">Profile</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<button ng-click="logout()" ng-show="isLoggedIn">
+    Facebook Logout
+</button>
+<button ng-click="getLoginStatus()" ng-show="isLoggedIn">
+    Get info
+</button>
+facebook status: {{loginStatusObj.status}}
+<hr>
+<div ng-view></div>

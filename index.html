@@ -27,62 +27,8 @@
 	<body>
 		<div id="fb-root"></div>
 		<div ng-controller="SporkitAppController">
-			<div id="loginView" ng-hide="isLoggedIn">
-				<div class="jumbotron masthead">
-					<div class="container">
-						<div class="phone"></div>
-						<div class="intro-content">
-							<p>Crave It?</p>
-							<h1>SPORKIT</h1>
-							<p>
-								and Eat with Friends
-							</p>
-							<span>Sporkit is a social dining network where great dishes are shared among friends</span>
-
-							<ul class="masthead-links">
-								<li><button ng-click="login()" ng-hide="isLoggedIn" class="btn btn-primary btn-lg btn-login">
-				<i class="fa fa-facebook-square fa-lg"></i> Connect
-			</button></li>
-								<li>
-									<a href="http://www.apple.com/osx/apps/app-store.html" target="_blank" class="appstore">Download App</a>
-								</li>
-							</ul>
-						</div><!--/intro-content-->
-					</div><!--/container-->
-				</div><!--/jumbotron-->
-			</div>
-			<div id="homeView" ng-show="isLoggedIn">
-				Home page
-				<div class="navbar">
-					<div class="navbar-inner">
-						<a class="brand" href="#">Spork.it</a>
-						<ul class="nav">
-							<li>
-								<a href="#/myplate">My Plate</a>
-							</li>
-							<li>
-								<a href="#/takephoto">Take Photo</a>
-							</li>
-							<li>
-								<a href="#/search">Search</a>
-							</li>
-							<li>
-								<a href="#/profile">Profile</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			
-			<button ng-click="logout()" ng-show="isLoggedIn">
-				Facebook Logout
-			</button>
-			<button ng-click="getLoginStatus()" ng-show="isLoggedIn">
-				Get info
-			</button>
-			facebook status: {{loginStatusObj.status}}
-			<hr>
-			<div ng-view></div>
+			<div ng-include src="'views/LoginView.html'" ng-hide="isLoggedIn"></div>
+			<div ng-include src="'views/HomeView.html'" ng-show="isLoggedIn"></div>
 		</div>
 	</body>
 </html>
