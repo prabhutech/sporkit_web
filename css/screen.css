@@ -144,7 +144,6 @@ body {
 	height: 375px;
 	position: relative;
 	z-index: 100;
-	padding-top: 10px;
 }
 .intro-content span {
 	color: #333;
@@ -155,6 +154,7 @@ body {
 	font-size: 70%;
 	line-height: 1.2em;
 }
+.btn-login { font-size: 1.5em !important;}
 
 /* Link styles (used on .masthead-links as well) */
 .jumbotron a {
