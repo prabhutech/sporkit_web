@@ -1,7 +1,36 @@
 <div  ng-controller="MyPlateController">
-    <table>
-        <tr ng-repeat="(key, value) in foods">
-            <td>{{key}} - {{value}}</td>
-        </tr>
-    </table>
+	<h1>Spork Menu <span>What your friends are eating near you</span></h1>
+	<div ng-repeat="food in foods" class="row">
+		<div class="col-md-4">
+			<div class="thumbnail">
+				<h4><i class="fa fa-cutlery"></i>Zak and 2 friends ate...</h4>
+				<img src="{{food.attributes.photo._url}}" />
+				<small class="pull-right time-stamp">1 min</small>
+				<h4 class="dish-name">{{food.attributes.name}}</h4>
+				<small class="pull-right">0.2 mi</small>
+				<h5><i class="fa fa-map-marker"></i><a href="http://www.hobees.com" target="_blank">Hobee's Restaurant</a></h5>
+			</div><!--/thumbnail-->
+		</div><!--/col-->
+		<div class="col-md-4">
+			<div class="thumbnail">
+				<h4><i class="fa fa-cutlery"></i>Zak and 2 friends ate...</h4>
+				<img src="{{food.attributes.photo._url}}" />
+				<small class="pull-right time-stamp">1 min</small>
+				<h4 class="dish-name">{{food.attributes.name}}</h4>
+				<small class="pull-right">0.2 mi</small>
+				<h5><i class="fa fa-map-marker"></i><a href="http://www.hobees.com" target="_blank">Hobee's Restaurant</a></h5>
+			</div><!--/thumbnail-->
+		</div><!--/col-->
+		<div class="col-md-4">
+			<div class="thumbnail">
+				<h4><i class="fa fa-cutlery"></i>Zak and 2 friends ate...</h4>
+				<img src="{{food.attributes.photo._url}}" />
+				<small class="pull-right time-stamp">1 min</small>
+				<h4 class="dish-name">{{food.attributes.name}}</h4>
+				<small class="pull-right">0.2 mi</small>
+				<h5><i class="fa fa-map-marker"></i><a href="http://www.hobees.com" target="_blank">Hobee's Restaurant</a></h5>
+			</div><!--/thumbnail-->
+		</div><!--/col-->
+	</div><!--/row-->
+
 </div>

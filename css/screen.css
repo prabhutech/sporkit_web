@@ -200,8 +200,18 @@ background-position: center 12px;
 	display: block;
 	border-bottom: 1px solid #ccc;
 	padding: 0px 0px 10px 0px;
-	margin: 0px;
+	margin: 0px 0px 20px 0px;
 	text-shadow: 0 1px 1px #fff, 1px 1px 1px #fff;
+}
+.main-content h1 span {
+	display: block;
+	font-size: 16px;
+	font-weight: normal;
+	text-shadow: none;
+	padding-top: 10px;
+}
+.main-content .row {
+	margin-bottom: 20px;
 }
 .main-content .first-row {
 	border-top: 1px solid #fff;
@@ -219,10 +229,16 @@ background-position: center 12px;
 }
 .main-content .thumbnail {
 	background: white;
+	padding: 0px 20px;
 }
-.main-content .thumbnail h5 {
-	margin: 0px;
-	padding: 0px;
+.main-content .thumbnail h4.dish-name, .main-content .thumbnail h5 {
+	text-transform: capitalize;
+}
+.main-content .thumbnail i {
+	margin-right: 10px;
+}
+.main-content .thumbnail img {
+	margin-bottom: 15px;
 }
 .main-content .thumbnail .btn-group {
 	margin-top: 8px;
@@ -231,18 +247,7 @@ background-position: center 12px;
 	padding: 6px 3px !important;
 	line-height: 0px !important;
 }
-.main-content .thumbnail dl {
-	margin: 0px;
-	padding: 5px 0px;
-	font-size: 90%;
-}
-.main-content .thumbnail dt, .main-content .thumbnail dd {
-	margin: 0px;
-	padding: 0px;
-}
-.main-content .thumbnail dt {
-	font-weight: bold;
-}
+
 .main-content small.time-stamp {
 	font-size: 70%;
 	color: #999;
