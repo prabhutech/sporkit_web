@@ -22,23 +22,27 @@
 					<a href="#/search"><i class="fa fa-search fa-fw"></i> Search</a>
 				</li>
 				<li>
-					<div class="btn-group">
-						<a class="btn btn-spork" href="#"><i class="fa fa-user fa-fw"></i> Profile</a>
-						<a class="btn btn-spork dropdown-toggle" data-toggle="dropdown" href="#"> <span class="fa fa-caret-down"></span></a>
-						<ul class="dropdown-menu">
-							<li>
-								<a href="#"><i class="fa fa-cog fa-fw"></i> Settings</a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-trash-o fa-fw"></i> Privacy</a>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<button ng-click="logout()" ng-show="isLoggedIn"><i class="fa fa-unlock fa-fw"></i> Logout</button>
-							</li>
-						</ul>
-					</div>
+					<a class="btn btn-spork" href="#/profile"><i class="fa fa-user fa-fw"></i> Profile</a>
+
 				</li>
+				<li>
+					<a href="#" ng-click="logout()" ng-show="isLoggedIn"><i class="fa fa-unlock fa-fw"></i> Logout</a>
+				</li>
+				<!--li>
+				<div class="btn-group">
+				<a class="btn btn-spork dropdown-toggle" data-toggle="dropdown" href="#"> <span class="fa fa-caret-down"></span></a>
+				<ul class="dropdown-menu">
+				<li>
+				<a href="#"><i class="fa fa-cog fa-fw"></i> Settings</a>
+				</li>
+				<li>
+				<a href="#"><i class="fa fa-trash-o fa-fw"></i> Privacy</a>
+				</li>
+				<li class="divider"></li>
+				<li></li>
+				</ul>
+				</div>
+				</li-->
 			</ul>
 		</div><!--/navbar-collapse-->
 		<div class="input-group input-group-sm col-lg-3 pull-right">
@@ -52,9 +56,9 @@
 	</div><!--/container-->
 </div><!--/navbar-fixed-top-->
 
-<button ng-click="getLoginStatus()" ng-show="isLoggedIn">
-	Get info
-</button>
-facebook status: {{loginStatusObj.status}}
-<hr>
-<div ng-view></div>
+<div class="clearfix"></div>
+
+<div ng-view class="container">
+	facebook status: {{loginStatusObj.status}}
+
+</div>

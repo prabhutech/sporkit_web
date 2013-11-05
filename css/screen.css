@@ -5,7 +5,7 @@ html {
 	overflow: auto;
 }
 body {
-	padding: 0px;
+	padding: 160px 0px 0px 0px;
 	background: url(../assets/bg.gif) repeat left top;
 	height: 100%;
 }
@@ -114,6 +114,7 @@ background-position: center 12px;
 .jumbotron {
 	position: relative;
 	padding: 20px 0 0px !important;
+	margin-top: -160px;
 	color: #fff;
 	text-align: center;
 	background: #c26600 url(../assets/bg-home.png) repeat left top !important; /* Old browsers */
