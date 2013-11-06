@@ -1,4 +1,36 @@
 <div ng-controller="TakePhotoController">
-    <input type="text" ng-model="food.name"/>
-    <button ng-click="saveFood()">Save</button>
+	<h1>Share Dishes</h1>
+
+	<div class="row">
+		<div class="col-sm-6 col-md-3 upload">
+			<input type="image" src="assets/thumb-default.png" id="holder" class="img-thumbnail img-responsive" />
+			<label class="btn-upload btn btn-default"> Choose your food photo... <span>
+					<input type="file" id="img-upload"  name="img-upload" />
+				</span> </label>
+		</div>
+
+		<div class="col-md-6">
+			<form role="form" class="form-upload">
+				<div class="form-group">
+					<label for="dish-name">Dish Name</label>
+					<input type="text" class="form-control" ng-model="food.name" placeholder="e.g. Pad Thai, Salmon Sashimi"/>
+				</div>
+				<div class="form-group">
+					<label for="loc-name">Location</label>
+					<input type="text" class="form-control" ng-model="location.name" placeholder="e.g. Name of the restaurant"/>
+				</div>
+				<div class="form-group">
+					<label for="description">How was this dish?</label>
+					<textarea class="form-control" rows="5" placeholder="You can describe this dish using hashtags e.g. #delicious #yummy"></textarea>
+				</div>
+
+				<button class="btn btn-primary" ng-click="saveFood()">
+					Share
+				</button>
+		</div>
+
+		</fieldset>
+		</form>
+
+	</div><!--row-->
 </div>

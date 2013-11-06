@@ -1,4 +1,10 @@
 <div  ng-controller="MyPlateController">
+	<ul class="pager pull-right filter">
+		<li class="active"><a href="#">All</a></li>
+		<li><a href="#">Latest</a></li>
+		<li><a href="#">Popular</a></li>
+		<li><a href="#">Nearest</a></li>
+	</ul>
 	<h1>Spork Menu <span>What your friends are eating near you</span></h1>
 	<div ng-repeat="food in foods" class="row">
 		<div class="col-md-4">
@@ -32,5 +38,4 @@
 			</div><!--/thumbnail-->
 		</div><!--/col-->
 	</div><!--/row-->
-
-</div>
+</div><!--ng-controller-->

@@ -12,21 +12,34 @@
 			</div></!--/logo-->
 		</div><!--/navbar-header-->
 		<div class="navbar-collapse collapse">
+			<div class="col-md-3 search-bar pull-right">
+				<div class="input-group input-group-sm pull-right">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button">
+							<i class="fa fa-location-arrow"></i>
+						</button> </span>
+					<input class="form-control" type="text" placeholder="Your Current Location...">
+					<span class="input-group-btn">
+						<button class="btn btn-warning" type="button">
+							Set
+						</button> </span>
+				</div><!--/input-->
+			</div><!--/col-->
+			<div class="clearfix"></div>
 			<ul class="nav nav-pills navbar-right">
 				<li>
 					<a href="#/myplate"><i class="fa fa-cutlery fa-fw"></i> Spork Menu</a>
 				</li>
 				<li>
-					<a href="#/takephoto"><i class="fa fa-upload fa-fw"></i> Upload a Dish</a>
+					<a href="#/takephoto"><i class="fa fa-camera fa-fw"></i> Share Dishes</a>
 				<li>
-					<a href="#/search"><i class="fa fa-search fa-fw"></i> Search</a>
+					<a href="#/search"><i class="fa fa-crosshairs fa-fw"></i> Dish Hunt</a>
 				</li>
 				<li>
-					<a class="btn btn-spork" href="#/profile"><i class="fa fa-user fa-fw"></i> Profile</a>
-
+					<a href="#/profile"><i class="fa fa-user fa-fw"></i> Profile</a>
 				</li>
 				<li>
-					<a href="#" ng-click="logout()" ng-show="isLoggedIn"><i class="fa fa-unlock fa-fw"></i> Logout</a>
+					<a href="#" ng-click="logout()" ng-show="isLoggedIn"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
 				</li>
 				<!--li>
 				<div class="btn-group">
@@ -45,14 +58,6 @@
 				</li-->
 			</ul>
 		</div><!--/navbar-collapse-->
-		<div class="input-group input-group-sm col-lg-3 pull-right">
-			<span class="input-group-addon"><i class="fa fa-location-arrow"></i></span>
-			<input class="form-control" type="text" placeholder="Sunnyvale">
-			<span class="input-group-btn">
-				<button class="btn btn-default" type="button">
-					Go
-				</button> </span>
-		</div>
 	</div><!--/container-->
 </div><!--/navbar-fixed-top-->
 

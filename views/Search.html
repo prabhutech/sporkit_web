@@ -1,4 +1,18 @@
 <div  ng-controller="SearchController">
-    <div ng-show="isLoading">Loading...</div>
-    <div id="mapholder"></div>
+	<div class="col-md-6 hunt-bar pull-right">
+		<div class="input-group input-group-lg pull-right">
+			<input class="form-control" type="text" placeholder="Hunt for your cravings...">
+			<span class="input-group-btn">
+				<button class="btn btn-warning" type="button">
+					<i class="fa fa-crosshairs fa-lg"></i>
+				</button> 
+			</span>
+		</div><!--/input-->
+	</div><!--/col-->
+	<h1>Dish Hunt</h1>
+	<div id="mapholder">
+		<div ng-show="isLoading" class="spinner">
+			<i class="fa fa-refresh fa-spin fa-lg"></i>
+		</div>
+	</div>
 </div>

@@ -253,17 +253,15 @@ background-position: center 12px;
 	color: #999;
 	padding-top: 5px;
 }
-.main-content .filter {
-	margin: 15px 50px 0px 0px;
+.filter {
+	margin: 0px;
 	padding: 0px;
 }
 .filter > .active > a, .filter > .active > a:hover {
 	background: #333 !important;
 	color: #fff !important;
 }
-.filter > li > a {
-	border-radius: 15px !important;
-}
+
 .filter li a {
 	color: #999 !important;
 }
@@ -342,6 +340,15 @@ background-position: center 12px;
 }
 
 /*search*/
+#mapholder {
+	border: 10px solid whitesmoke;
+	border-radius: 5px;
+	height: 350px !important;
+}
+#mapholder .spinner {
+	text-align: center;
+	margin-top: 13%;
+}
 .topbar-search {
 	margin-top: -5px;
 }
@@ -462,8 +469,18 @@ dl.fixpos img {
 }
 
 /*content*/
-.search-bar {
-	padding-top: 130px;
+.search-bar, .hunt-bar {
+	padding-right: 0px !important;
+}
+.hunt-bar {
+	margin-top: -5px;
+}
+.search-bar .btn-default {
+	margin-right: -1px;
+}
+.search-bar .btn-warning, .hunt-bar .btn-warning {
+	background-color: #f47f1f;
+	border-color: #f47f1f;
 }
 .search-bar .form-search {
 	padding-top: 15px;
@@ -733,10 +750,29 @@ img.hungry {
 }
 
 /* upload */
-.default-thumb {
-	text-align: center;
-	display: block;
+.form-upload .form-group input {
+	margin-bottom:  15px;
 }
-.default-thumb img {
-	margin-bottom: 20px;
+.upload input[type="file"]{
+  z-index: 999;
+  line-height: 0;
+  font-size: 50px;
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity = 0);-ms-filter: "alpha(opacity=0)";
+  cursor: pointer;
+  _cursor: hand;
+  margin: 0;
+  padding:0;
+  left:0;
 }
+.btn-upload {
+   overflow:hidden;
+   cursor:pointer;
+   text-align:center;
+   display:block;
+   width: 100%;
+ }
+ input[type="text"]{
+   float:left;
+ }
