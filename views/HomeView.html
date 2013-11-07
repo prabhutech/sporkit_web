@@ -38,7 +38,9 @@
 				<li>
 					<a href="#/profile"><i class="fa fa-user fa-fw"></i> Profile</a>
 				</li>
-				
+                <li>
+                    <a href="#" ng-click="logout()"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
 				<!--li>
 				<div class="btn-group">
 				<a class="btn btn-spork dropdown-toggle" data-toggle="dropdown" href="#"> <span class="fa fa-caret-down"></span></a>
@@ -58,8 +60,3 @@
 		</div><!--/navbar-collapse-->
 	</div><!--/container-->
 </div><!--/navbar-fixed-top-->
-
-<div ng-view class="container main-content">
-	facebook status: {{loginStatusObj.status}}
-
-</div>
