@@ -1,6 +1,55 @@
 <div  ng-controller="ProfileController">
-    <h1>Profile</h1>
-    Name: {{userInfo.name}}
-    Location: 
-    Friends: {{nooffriends}}
+	<h1>Profile <span>See all dishes and activities among friends</span></h1>
+	<div class="row row-offcanvas row-offcanvas-left">
+		<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+			<img src="assets/user-default.jpg" class="img-thumbnail img-responsive" />
+			<div class="name">
+				<h2>{{userInfo.name}}</h2>
+			</div>
+			<div class="location">
+				<i class="fa fa-map-marker fa-fw fa-lg"></i> Sunnyvale, CA{{userInfo.location}}
+			</div>
+			<ul class="nav nav-pills nav-stacked nav-profile">
+				<li class="active">
+					<a href="#"><i class="fa fa-cutlery fa-fw"></i> My Dishes<span class="badge pull-right">54</span></a>
+				</li>
+				<li>
+					<a href="#"><i class="fa fa-list-ul fa-fw"></i> Sporklist<span class="badge pull-right">122</span></a>
+				</li>
+				<li>
+					<a href="#"><i class="fa fa-group fa-fw"></i> Sporkers<span class="badge pull-right">{{nooffriends}}</span></a>
+				</li>
+				<li>
+					<a href="#"><i class="fa fa-list fa-fw"></i> Activities <span class="badge pull-right">3</span></a>
+				</li>
+				<li>
+					<a href="#"><i class="fa fa-cog fa-fw"></i> Settings</a>
+				</li>
+				<li>
+					<a href="#" ng-click="logout()" ng-show="isLoggedIn"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+				</li>
+			</ul>
+		</div><!--/col-xs-6-->
+
+		<div class="col-xs-12 col-sm-9 pull-right">
+			<p class="pull-left visible-xs">
+				<button type="button" class="btn btn-default btn-xs" data-toggle="offcanvas">
+					<i class="fa fa-exchange fa-fw"></i>
+				</button>
+			</p>
+			<div class="panel panel-default profile-content">
+				<div class="panel-body">
+					<h2><i class="fa fa-cutlery"></i> My Dishes</h2>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('[data-toggle=offcanvas]').click(function() {
+			$('.row-offcanvas').toggleClass('active');
+		});
+	}); 
+</script>

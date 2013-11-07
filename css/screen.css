@@ -473,7 +473,7 @@ dl.fixpos img {
 	padding-right: 0px !important;
 }
 .hunt-bar {
-	margin-top: -5px;
+	margin-top: 10px;
 }
 .search-bar .btn-default {
 	margin-right: -1px;
@@ -666,20 +666,23 @@ img.hungry {
 }
 
 /*profile*/
-.profile-board h2 {
-	margin-top: 0px;
-	line-height: 30px;
+.name {
+	display: block;
 }
-.profile-board .span9 {
-	padding-left: 10px;
+.location {
+	font-size: 1.2em;
+	padding-bottom: 15px;
 }
-.profile-info h3 {
-	margin: 0px;
-	padding: 0px;
-	line-height: normal;
+.nav-profile > li > a {
+	text-shadow: none !important;
 }
-.profile-info hr {
-	margin: 10px 0px;
+.nav-profile > li.active > a, .nav-profile > li.active > a:hover, .nav-profile > li.active > a:focus {
+}
+.nav-profile > li > a:hover, .nav-profile > li > a:focus {
+	background-color: #eee !important;
+}
+.profile-content h2 {
+	margin-top: 0 !important;
 }
 .stats {
 	text-align: center;
@@ -776,3 +779,48 @@ img.hungry {
  input[type="text"]{
    float:left;
  }
+
+
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 767px) {
+	html {
+		overflow: hidden;
+	}
+	.col-xs-12, .col-sm-9 {
+		position: absolute !important;
+	}
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
+}
