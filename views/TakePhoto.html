@@ -3,6 +3,10 @@
 		$("div.price-input").toggle();
 		$('button.add-price').hide();
 	}); 
+	$("button.add-loc-type").click(function() {
+		$("div.loc-type-input").toggle();
+		$('button.add-loc-type').hide();
+	}); 
 </script>
 <div ng-controller="TakePhotoController">
 	<h1>Share Dishes <span>Let your friends see your awesome dishes</span></h1>
@@ -33,7 +37,7 @@
 				<button class="btn btn-default add-price">
 					Add Price
 				</button>
-
+				
 				<div class="price-input col-md-4">
 					<label for="price">How much is this dish?</label>
 						<div class="input-group">
@@ -46,6 +50,40 @@
 								<ul class="dropdown-menu pull-right">
 									<li>
 										<a href="#">I cooked this dish!</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+				</div>
+				
+				<button class="btn btn-default add-loc-type">
+					Add Location Type
+				</button>
+				
+				<div class="loc-type-input col-md-6">
+					<label for="loc">Type of the food provider</label>
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="" />
+							<div class="input-group-btn">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<i class="fa fa-caret-down fa-fw"></i>
+								</button>
+								<ul class="dropdown-menu pull-right">
+									<li>
+										<a href="#">Restaurant</a>
+									</li>
+									<li>
+										<a href="#">Street Vendor</a>
+									</li>
+									<li>
+										<a href="#">Food Truck</a>
+									</li>
+									<li>
+										<a href="#">Hotel</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="#">Add New...</a>
 									</li>
 								</ul>
 							</div>
