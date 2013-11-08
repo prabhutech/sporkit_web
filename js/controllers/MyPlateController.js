@@ -1,6 +1,6 @@
 SporkitApp.controller('MyPlateController', ['$scope', 'Facebook',
 function($scope, Facebook) {
-    Facebook.getAllFoods($scope.currentUser);
+    Facebook.getAllFoods();
 
     $scope.$on('get-all-foods-onsuccess', function(event, response) {
         console.log(response);

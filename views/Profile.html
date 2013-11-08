@@ -4,10 +4,11 @@
 		<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
 			<img src="assets/user-default.jpg" class="img-thumbnail img-responsive" />
 			<div class="name">
-				<h2>{{userInfo.name}}</h2>
+				<h2>{{currentUser.attributes.fbUserData.name}}</h2>
 			</div>
 			<div class="location">
-				<i class="fa fa-map-marker fa-fw fa-lg"></i> Sunnyvale, CA{{userInfo.location}}
+				<i class="fa fa-map-marker fa-fw fa-lg"></i>
+				{{getCurrentLocationAddress()}}
 			</div>
 			<ul class="nav nav-pills nav-stacked nav-profile">
 				<li class="active">

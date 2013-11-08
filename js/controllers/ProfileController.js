@@ -1,13 +1,20 @@
 SporkitApp.controller('ProfileController', ['$scope', 'Facebook',
 function($scope, Facebook) {
-    Facebook.userInfo();
-    Facebook.getFriends();
-    $scope.$on('fb-get-userinfo-onsuccess', function(event, response) {
-        $scope.userInfo = response;
-        if (!$scope.$$phase) {
-            $scope.$apply();
+    //Facebook.getFriends();
+    $scope.currentUser = Parse.User.current();
+
+    $scope.getCurrentLocationAddress = function() {
+        var address;
+        if ($scope.currentUser.attributes.fbUserData.location) {
+            address = $scope.currentUser.attributes.fbUserData.location;
+        } else if (Facebook.currentLocationAddress0) {
+            address = Facebook.currentLocationAddress0;
+        } else {
+            address = "Unknown";
         }
-    });
+        return address;
+    };
+
     $scope.$on('fb-get-friends-onsuccess', function(event, response) {
         $scope.nooffriends = response.data.length;
         // $.each(response.data, function(index, friend) {

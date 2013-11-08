@@ -2,7 +2,6 @@ var FacebookProvider = angular.module('FacebookProvider', []);
 FacebookProvider.service('Facebook', function($rootScope) {
     var Food = Parse.Object.extend("Food");
     var foodQuery = new Parse.Query(Food);
-    var currentLocationAddress;
 
     var createResponse = function(id, response) {
         if (response) {
@@ -13,6 +12,8 @@ FacebookProvider.service('Facebook', function($rootScope) {
     };
 
     return {
+        currentLocationAddress0 : null,
+        currentLocationAddress1 : null,
         currentUser : Parse.User.current(),
         userInfo : function() {
             FB.api("/me", function(response) {
@@ -94,30 +95,31 @@ FacebookProvider.service('Facebook', function($rootScope) {
             }, function(results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     console.log(results);
-                    currentLocationAddress = results[1].formatted_address;
+                    currentLocationAddress0 = results[0].formatted_address;
+                    currentLocationAddress1 = results[1].formatted_address;
                     $rootScope.$broadcast('getLocationFromLL-onsuccess', results);
                     /*
-                    if (results[1]) {
-                        //formatted address
-                        console.log(results[1].formatted_address);
-                        //find country name
-                        for (var i = 0; i < results[0].address_components.length; i++) {
-                            for (var b = 0; b < results[0].address_components[i].types.length; b++) {
+                     if (results[1]) {
+                     //formatted address
+                     console.log(results[1].formatted_address);
+                     //find country name
+                     for (var i = 0; i < results[0].address_components.length; i++) {
+                     for (var b = 0; b < results[0].address_components[i].types.length; b++) {
 
-                                //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
-                                if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
-                                    //this is the object you are looking for
-                                    city = results[0].address_components[i];
-                                    break;
-                                }
-                            }
-                        }
-                        //city data
-                        console.log(city.short_name + " " + city.long_name);
-                    } else {
-                        console.log("No results found");
-                    }
-                    */
+                     //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
+                     if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
+                     //this is the object you are looking for
+                     city = results[0].address_components[i];
+                     break;
+                     }
+                     }
+                     }
+                     //city data
+                     console.log(city.short_name + " " + city.long_name);
+                     } else {
+                     console.log("No results found");
+                     }
+                     */
                 } else {
                     console.log("Geocoder failed due to: " + status);
                 }
