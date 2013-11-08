@@ -1,5 +1,13 @@
-SporkitApp.controller('SearchController', ['$scope', 'Facebook',
-function($scope, Facebook) {
+SporkitApp.controller('SearchController', ['$scope', 'Facebook', 'Utils',
+function($scope, Facebook, Utils) {
+
+    $scope.$on('search-restaurants-onsuccess', function(event, response) {
+        console.log(response);
+        $scope.nearByRestaurants = response;
+        if (!$scope.$$phase) {
+            $scope.$apply();
+        }
+    });
     $scope.isLoading = true;
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -32,6 +40,13 @@ function($scope, Facebook) {
             title : "You are here!"
         });
         $scope.isLoading = false;
+
+        Facebook.callYelp({
+            'action' : 'http://api.yelp.com/v2/search?term=panda&ll=' + lat + ',' + lon,
+            'method' : 'GET',
+            'callbackId' : 'search-restaurants'
+        });
+        Facebook.getLocationFromLL(lat, lon);
         if (!$scope.$$phase) {
             $scope.$apply();
         }
@@ -54,5 +69,12 @@ function($scope, Facebook) {
         }
         $scope.isLoading = false;
     }
+
+    $scope.$on('getLocationFromLL-onsuccess', function(event, response) {
+        $scope.currentLocationAddress = response[0].formatted_address;
+        if (!$scope.$$phase) {
+            $scope.$apply();
+        }
+    });
 
 }]);
