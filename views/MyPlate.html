@@ -1,17 +1,17 @@
 <div  ng-controller="MyPlateController">
 	<!--ul class="pager pull-right filter">
-		<li class="active">
-			<a href="#">All</a>
-		</li>
-		<li>
-			<a href="#">Latest</a>
-		</li>
-		<li>
-			<a href="#">Popular</a>
-		</li>
-		<li>
-			<a href="#">Nearest</a>
-		</li>
+	<li class="active">
+	<a href="#">All</a>
+	</li>
+	<li>
+	<a href="#">Latest</a>
+	</li>
+	<li>
+	<a href="#">Popular</a>
+	</li>
+	<li>
+	<a href="#">Nearest</a>
+	</li>
 	</ul-->
 	<h1>Spork Menu <span>Dishes that you have eaten</span></h1>
 	<div ng-repeat="food in foods" class="row-fluid">
@@ -23,25 +23,51 @@
 				<!--small class="pull-right">0.2 mi</small>
 				<h5><i class="fa fa-map-marker"></i><a href="http://www.hobees.com" target="_blank">Hobee's Restaurant</a></h5-->
 				<img src="{{food.attributes.photo._url}}" />
-				<a href="#" class="pull-right badge"> <span class="glyphicon glyphicon-list-alt"></span> View Recipe</a>
+				<a href="#" class="pull-right badge" data-toggle="modal" data-target="#recipeModal"> <span class="glyphicon glyphicon-list-alt"></span> View Recipe</a>
+
+				<!-- Modal -->
+				<div class="modal fade" id="recipeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+									&times;
+								</button>
+								<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+							</div>
+							<div class="modal-body">
+								...
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">
+									Close
+								</button>
+								<button type="button" class="btn btn-primary">
+									Save changes
+								</button>
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+				
 				<!--ul class="action-bar pull-right">
-					<li>
-						<a href="#"><i class="fa fa-thumb-tack fa-fw fa-lg"></i>(19)</a>
-					</li>
-					<li>
-						<a href="#"><i class="fa fa-coffee fa-fw fa-lg"></i></a>
-					</li>
-					<li>
-						<a href="#"><i class="fa fa-comments fa-fw fa-lg"></i>(7)</a>
-					</li>
+				<li>
+				<a href="#"><i class="fa fa-thumb-tack fa-fw fa-lg"></i>(19)</a>
+				</li>
+				<li>
+				<a href="#"><i class="fa fa-coffee fa-fw fa-lg"></i></a>
+				</li>
+				<li>
+				<a href="#"><i class="fa fa-comments fa-fw fa-lg"></i>(7)</a>
+				</li>
 				</ul>
 				<div class="tags">
-					<span class="badge">#delicious</span>
-					<span class="badge">#brekfast</span>
-					<span class="badge">#spicy</span>
+				<span class="badge">#delicious</span>
+				<span class="badge">#brekfast</span>
+				<span class="badge">#spicy</span>
 				</div-->
 				<hr class="clear" />
 			</div><!--/thumbnail-->
-		</div><!--/col--> 
+		</div><!--/col-->
 	</div><!--/row-->
 </div><!--ng-controller-->
