@@ -22,8 +22,10 @@ FacebookProvider.service('Facebook', function($rootScope) {
             });
         },
         getAllFoods : function(user) {
-            foodQuery.equalTo("createdBy", user);
-            foodQuery.find(function(response){
+            if (user) {
+                foodQuery.equalTo("createdBy", user);
+            }
+            foodQuery.find(function(response) {
                 createResponse('get-all-foods', response);
             });
         },
@@ -41,6 +43,14 @@ FacebookProvider.service('Facebook', function($rootScope) {
                         console.log("User logged in through Facebook!");
                     }
                     $rootScope.$broadcast('fb-login-onsuccess');
+                    FB.api("/me", function(response) {
+                        if (response) {
+                            console.dir(response);
+                            var currentUser = Parse.User.current();
+                            currentUser.set("fbUserData", response);
+                            currentUser.save();
+                        }
+                    });
                 },
                 error : function(user, error) {
                     alert("User cancelled the Facebook login or did not fully authorize.");
