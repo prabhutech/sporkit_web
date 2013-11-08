@@ -12,4 +12,22 @@ function($scope, Facebook) {
             $scope.$apply();
         }
     });
+    $scope.findMatchingFoodFromPearson = Facebook.findMatchingFoodFromPearson;
+
+    $scope.$on('findMatchingFoodFromPearson-onsuccess', function(event, response) {
+        $scope.matchingFoodFromPearson = response.results[0];
+        Facebook.getRecipeForPearsonFood(response.results[0]);
+        console.dir($scope.matchingFoodFromPearson);
+        if (!$scope.$$phase) {
+            $scope.$apply();
+        }
+    });
+
+    $scope.$on('getRecipeForPearsonFood-onsuccess', function(event, response) {
+        $scope.recipeForPearsonFood = response;
+        if (!$scope.$$phase) {
+            $scope.$apply();
+        }
+    });
+
 }]);

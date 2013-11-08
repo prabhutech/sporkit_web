@@ -38,6 +38,26 @@ FacebookProvider.service('Facebook', function($rootScope) {
                 $rootScope.$broadcast('get-fb-login-status', response);
             });
         },
+        findMatchingFoodFromPearson : function(food) {
+            $.ajax({
+                'url' : 'http://api.pearson.com/kitchen-manager/v1/recipes?name-contains=' + food.attributes.name,
+                'dataType' : 'jsonp',
+                //'jsonpCallback' : 'cb',
+                'success' : function(data, textStats, XMLHttpRequest) {
+                    $rootScope.$broadcast('findMatchingFoodFromPearson-onsuccess', data);
+                }
+            });
+        },
+        getRecipeForPearsonFood: function(food) {
+            $.ajax({
+                'url' : food.url,
+                'dataType' : 'jsonp',
+                //'jsonpCallback' : 'cb',
+                'success' : function(data, textStats, XMLHttpRequest) {
+                    $rootScope.$broadcast('getRecipeForPearsonFood-onsuccess', data);
+                }
+            });
+        },
         callYelp : function(message) {
             /* Oauth */
             var auth = {

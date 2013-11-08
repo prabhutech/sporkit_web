@@ -1,4 +1,5 @@
 <div  ng-controller="MyPlateController">
+<<<<<<< HEAD
 	<!--ul class="pager pull-right filter">
 	<li class="active">
 	<a href="#">All</a>
@@ -70,4 +71,84 @@
 			</div><!--/thumbnail-->
 		</div><!--/col-->
 	</div><!--/row-->
+=======
+    <!--ul class="pager pull-right filter">
+    <li class="active">
+    <a href="#">All</a>
+    </li>
+    <li>
+    <a href="#">Latest</a>
+    </li>
+    <li>
+    <a href="#">Popular</a>
+    </li>
+    <li>
+    <a href="#">Nearest</a>
+    </li>
+    </ul-->
+    <h1>Spork Menu <span>Dishes that you have eaten</span></h1>
+    <div ng-repeat="food in foods" class="row-fluid">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <small class="pull-right time-stamp"><i class="fa fa-clock-o fa-fw"></i>1 min</small>
+                <h4><i class="fa fa-cutlery"></i>Zak ate...</h4>
+                <h4 class="dish-name">{{food.attributes.name}}</h4>
+                <!--small class="pull-right">0.2 mi</small>
+                <h5><i class="fa fa-map-marker"></i><a href="http://www.hobees.com" target="_blank">Hobee's Restaurant</a></h5-->
+                <img src="{{food.attributes.photo._url}}" />
+                <a href="#" class="pull-right badge" data-toggle="modal" data-target="#recipeModal" ng-click="findMatchingFoodFromPearson(food)"> <span class="glyphicon glyphicon-list-alt"></span> View Recipe</a>
+                <!--ul class="action-bar pull-right">
+                <li>
+                <a href="#"><i class="fa fa-thumb-tack fa-fw fa-lg"></i>(19)</a>
+                </li>
+                <li>
+                <a href="#"><i class="fa fa-coffee fa-fw fa-lg"></i></a>
+                </li>
+                <li>
+                <a href="#"><i class="fa fa-comments fa-fw fa-lg"></i>(7)</a>
+                </li>
+                </ul>
+                <div class="tags">
+                <span class="badge">#delicious</span>
+                <span class="badge">#brekfast</span>
+                <span class="badge">#spicy</span>
+                </div-->
+                <hr class="clear" />
+            </div><!--/thumbnail-->
+        </div><!--/col-->
+    </div><!--/row-->
+    <!-- Modal -->
+    <div class="modal" id="recipeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Food recipe for {{matchingFoodFromPearson.name}}</h4>
+                </div>
+                <div class="modal-body">
+                    <h5>Cooking method: {{matchingFoodFromPearson.cooking_method}}</h5>
+                    <h5>Ingredients</h5>
+                    <ul>
+                        <li ng-repeat="ingredient in matchingFoodFromPearson.ingredients">
+                            {{ingredient}}
+                        </li>
+                    </ul>
+                    <h5>Cooking steps:</h5>
+                    <ul>
+                        <li ng-repeat="step in recipeForPearsonFood.directions">
+                            {{step}}
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+>>>>>>> d16f90c913b2e35f823e7687369d6c875eac7366
 </div><!--ng-controller-->
