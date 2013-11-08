@@ -243,8 +243,23 @@ background-position: center 12px;
 .main-content .thumbnail i {
 	margin-right: 10px;
 }
-.main-content .thumbnail img {
-	margin-bottom: 15px;
+.main-content .thumbnail .action-bar, .main-content .thumbnail .tags  {
+	padding: 10px 0px;
+}
+.main-content .thumbnail .action-bar li {
+	list-style: none;
+	display: inline-block;
+	font-size: 1.2em;
+}
+.main-content .thumbnail .action-bar li a {
+	color: #999;
+}
+.main-content .thumbnail .action-bar li a:hover {
+	color: #f47f1f;
+	text-decoration: none;
+}
+.main-content .thumbnail .action-bar i {
+	margin-right: 5px;
 }
 .main-content .thumbnail .btn-group {
 	margin-top: 8px;
@@ -789,7 +804,7 @@ img.hungry {
 .form-upload .form-group input {
 	margin-bottom:  15px;
 }
-.price-input {
+.price-input, .loc-type-input {
 	display: none;
 	margin-bottom: 15px;
 	padding-left: 0px !important;
