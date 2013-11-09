@@ -1,80 +1,169 @@
 <div  ng-controller="MyPlateController">
-    <!--ul class="pager pull-right filter">
-    <li class="active">
-    <a href="#">All</a>
-    </li>
-    <li>
-    <a href="#">Latest</a>
-    </li>
-    <li>
-    <a href="#">Popular</a>
-    </li>
-    <li>
-    <a href="#">Nearest</a>
-    </li>
-    </ul-->
-    <h1>Spork Menu <span>Dishes that you have eaten</span></h1>
-    <div ng-repeat="food in foods" class="row-fluid">
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <small class="pull-right time-stamp"><i class="fa fa-clock-o fa-fw"></i>1 min</small>
-                <h4><i class="fa fa-cutlery"></i>Zak ate...</h4>
-                <h4 class="dish-name">{{food.attributes.name}}</h4>
-                <!--small class="pull-right">0.2 mi</small>
-                <h5><i class="fa fa-map-marker"></i><a href="http://www.hobees.com" target="_blank">Hobee's Restaurant</a></h5-->
-                <img src="{{food.attributes.photo._url}}" />
-                <a href="#" class="pull-right badge" data-toggle="modal" data-target="#recipeModal" ng-click="findMatchingFoodFromPearson(food)"> <span class="glyphicon glyphicon-list-alt"></span> View Recipe</a>
-                <!--ul class="action-bar pull-right">
-                <li>
-                <a href="#"><i class="fa fa-thumb-tack fa-fw fa-lg"></i>(19)</a>
-                </li>
-                <li>
-                <a href="#"><i class="fa fa-coffee fa-fw fa-lg"></i></a>
-                </li>
-                <li>
-                <a href="#"><i class="fa fa-comments fa-fw fa-lg"></i>(7)</a>
-                </li>
-                </ul>
-                <div class="tags">
-                <span class="badge">#delicious</span>
-                <span class="badge">#brekfast</span>
-                <span class="badge">#spicy</span>
-                </div-->
-                <hr class="clear" />
-            </div><!--/thumbnail-->
-        </div><!--/col-->
-    </div><!--/row-->
-    <!-- Modal -->
-    <div class="modal" id="recipeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">Food recipe for {{matchingFoodFromPearson.name}}</h4>
-                </div>
-                <div class="modal-body">
-                    <h5>Cooking method: {{matchingFoodFromPearson.cooking_method}}</h5>
-                    <h5>Ingredients</h5>
-                    <ul>
-                        <li ng-repeat="ingredient in matchingFoodFromPearson.ingredients">
-                            {{ingredient}}
-                        </li>
-                    </ul>
-                    <h5>Cooking steps:</h5>
-                    <ul>
-                        <li ng-repeat="step in recipeForPearsonFood.directions">
-                            {{step}}
-                        </li>
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">
-                        Close
-                    </button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+	<!--ul class="pager pull-right filter">
+	<li class="active">
+	<a href="#">All</a>
+	</li>
+	<li>
+	<a href="#">Latest</a>
+	</li>
+	<li>
+	<a href="#">Popular</a>
+	</li>
+	<li>
+	<a href="#">Nearest</a>
+	</li>
+	</ul-->
+	<h1>Spork Menu <span>Dishes that you have eaten</span></h1>
+	<div ng-repeat="food in foods" class="row-fluid">
+		<div class="col-md-4">
+			<div class="thumbnail">
+				<small class="pull-right time-stamp"><i class="fa fa-clock-o fa-fw"></i>1 min</small>
+				<h4><i class="fa fa-cutlery"></i>Zak ate...</h4>
+				<h4 class="dish-name">{{food.attributes.name}}</h4>
+				<!--small class="pull-right">0.2 mi</small>
+				<h5><i class="fa fa-map-marker"></i><a href="http://www.hobees.com" target="_blank">Hobee's Restaurant</a></h5-->
+				<img src="{{food.attributes.photo._url}}" />
+				<a href="#" class="pull-right badge" data-toggle="modal" data-target="#recipeModal" ng-click="findMatchingFoodFromPearson(food)"> <span class="glyphicon glyphicon-list-alt"></span> Cook it </a>
+				<a href="#" class="badge" ng-click="findMatchingFoodFromPearson(food)"> <img src="assets/spork.png" class="icon-spork" /> Sporkit (34) </a>
+
+				<!--ul class="action-bar pull-right">
+				<li>
+				<a href="#"><i class="fa fa-thumb-tack fa-fw fa-lg"></i>(19)</a>
+				</li>
+				<li>
+				<a href="#"><i class="fa fa-coffee fa-fw fa-lg"></i></a>
+				</li>
+				<li>
+				<a href="#"><i class="fa fa-comments fa-fw fa-lg"></i>(7)</a>
+				</li>
+				</ul>
+				<div class="tags">
+				<span class="badge">#delicious</span>
+				<span class="badge">#brekfast</span>
+				<span class="badge">#spicy</span>
+				</div-->
+				<hr class="clear" />
+			</div><!--/thumbnail-->
+		</div><!--/col-->
+	</div><!--/row-->
+	<!-- Modal -->
+	<div class="modal" id="recipeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Food recipe for {{matchingFoodFromPearson.name}}</h4>
+				</div>
+				<div class="modal-body">
+					<ul class="nav nav-tabs recipe-tabs">
+						<li class="active">
+							<a href="#recipe" data-toggle="tab">Recipe</a>
+						</li>
+						<li>
+							<a href="#savings" data-toggle="tab">Compare Prices</a>
+						</li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div class="tab-pane active" id="recipe">
+							<div class="recipe-detail">
+								<span class="fa-stack fa-lg pull-left icon"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-fire fa-stack-1x fa-inverse"></i> </span>
+								<h4>Cooking Method: <span>{{matchingFoodFromPearson.cooking_method}}</span></h4>
+							</div>
+
+							<div class="recipe-detail">
+								<span class="fa-stack fa-lg pull-left icon"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-lemon-o fa-stack-1x fa-inverse"></i> </span>
+								<h4>Ingredients</h4>
+								<ul>
+									<li ng-repeat="ingredient in matchingFoodFromPearson.ingredients">
+										{{ingredient}}
+									</li>
+								</ul>
+							</div>
+
+							<div class="recipe-detail">
+								<span class="fa-stack fa-lg pull-left icon"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-list-ol fa-stack-1x fa-inverse"></i> </span>
+								<h4>Cooking steps:</h4>
+								<ul class="steps">
+									<li ng-repeat="step in recipeForPearsonFood.directions">
+										{{step}}
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="tab-pane" id="savings">
+							<div class="row compare-prices">
+								<div class="col-md-6">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">Dining Out</h3>
+										</div>
+										<div class="panel-body">
+											<div class="table-responsive">
+												<table class="table">
+													<tr>
+														<th>Item</th>
+														<th>Quantity Slice(s)</th>
+														<th>Price</th>
+													</tr>
+													<tr>
+														<td>Cheesecake</td>
+														<td>16</td>
+														<td class="danger">$25</td>
+													</tr>
+													<tr>
+														<td></td>
+														<td>1</td>
+														<td class="danger">$8</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">Homemade</h3>
+										</div>
+										<div class="panel-body">
+											<div class="table-responsive">
+												<table class="table">
+													<tr>
+														<th>Item</th>
+														<th>Quantity Slice(s)</th>
+														<th>Price</th>
+													</tr>
+													<tr>
+														<td>Cheesecake</td>
+														<td>16</td>
+														<td class="success">$16.50</td>
+													</tr>
+													<tr>
+														<td></td>
+														<td>1</td>
+														<td class="success">$1.31</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div><!--/row-->
+						</div>
+					</div><!--tab-conten-->
+
+				</div><!--/modal-body-->
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">
+						Close
+					</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 </div><!--ng-controller-->

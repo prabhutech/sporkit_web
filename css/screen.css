@@ -228,6 +228,9 @@ background-position: center 12px;
 	border-radius: 5px;
 	margin-bottom: 10px;
 }
+.main-content .thumbnail .icon-spork {
+	margin-bottom: 0px;
+}
 .main-content .thumbnail {
 	background: white;
 	padding: 10px 20px;
@@ -398,102 +401,56 @@ background-position: center 12px;
 }
 
 /*modal*/
-#modal-control {
-	border: none;
-	height: 310px;
-	margin: 0px;
-	padding: 0px;
+.modal-dialog {
+	width: 700px !important;
 }
-#foodmodal-control {
-	background: none;
-	padding-right: 15px;
+.modal-header {
+	background-color: #eee;
 }
-.modal-body img {
-	margin-right: 20px;
+.modal-body .icon {
+	margin-right: 10px;
 }
-#foodmodal {
-	width: 900px; /* SET THE WIDTH OF THE MODAL */
-	margin: -360px 0 0 -450px;
+.modal-body h4 span {
+	font-weight: normal;
 }
-#foodmodal .modal-body {
-	min-height: 560px;
+.modal-body .recipe-detail {
+	padding: 10px 0px;
+	border-bottom: 1px solid #eee;
 }
-#invite-modal .modal-body {
-	min-height: 460px;
+.modal-body .recipe-detail:last-child {
+	border-bottom: none;
 }
-#invite-modal {
-	width: 900px; /* SET THE WIDTH OF THE MODAL */
-	margin: -300px 0 0 -450px;
+.recipe-detail ul {
+	padding-left: 48px;
 }
-.friend-ate img {
-	margin: 0px;
+.recipe-detail ul.steps li {
+	padding: 5px 0px;
 }
-#foodmodal .span7, #invite-modal .span7 {
-	margin-left: 0px;
-}
-#myModalLabel span {
-	font-weight: 100;
-}
-.dl-location {
-	margin: 0px;
-	padding: 0px;
-}
-.dl-location dd {
-	padding-left: 5px;
-}
-.dl-location dd address {
-	margin: 0px;
-	padding: 0px;
-}
-.fixpos textarea {
-	margin-top: 10px;
-	width: 235px;
-}
-dl.fixpos {
-	position: fixed;
-	margin: 10px 0px 0px 0px;
-	padding: 10px 17px;
-	width: 250px;
-}
-dl.fixpos img {
-	margin-right: 10px !important;
-}
-#foodmodal h6 {
-	line-height: 10px;
-}
-.dl-comments {
-	min-height: 270px !important;
-}
-.dl-comments dt img {
-	float: left;
-}
-.dl-comments, .dl-comments dl {
-	margin: 0px;
-	padding: 0px;
-}
-.dl-comments dd.commentator, .fixpos dd.commentator {
+.recipe-tabs li {
+	width: 50%;
+	text-align: center;
 	font-weight: bold;
-	line-height: 0px;
-	padding: 5px 0px 10px 0px;
+	font-size: 18px;
 }
-.dl-comments dd {
-	margin: 0px 0px 0px 40px;
-	padding: 0px;
-	font-size: 90%;
-	line-height: 14px;
+.recipe-tabs li a {
+	text-shadow: none !important;
 }
-.request-details {
-	margin: 0px;
-	padding: 0px;
+
+.recipe-tabs > li > a:hover, .recipe-tabs > li > a:focus {
+	background-color: #eee !important;
 }
-.request-details dl {
-	margin: 0px 0px 10px 150px;
-	padding: 0px;
+.compare-prices {
+	margin-top: 20px;
+	font-family: 'Rock Salt', cursive !important;
+	font-size: 12px;
 }
-.request-details dt, .request-details dd {
-	margin: 0px;
-	padding: 0px;
+.compare-prices .panel-heading {
+	text-align: center;
 }
+.compare-prices .panel-heading h3 {
+	font-family: 'Rock Salt', cursive !important;
+}
+
 
 /*content*/
 .search-bar, .hunt-bar {
