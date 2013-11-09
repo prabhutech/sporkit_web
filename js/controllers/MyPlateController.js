@@ -30,4 +30,8 @@ function($scope, Facebook) {
         }
     });
 
+    $scope.getFoodTime = function(d1) {
+        return jQuery.timeago(d1);
+    };
+
 }]);

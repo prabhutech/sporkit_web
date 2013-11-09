@@ -17,11 +17,11 @@
 	<div ng-repeat="food in foods" class="row-fluid">
 		<div class="col-md-4">
 			<div class="thumbnail">
-				<small class="pull-right time-stamp"><i class="fa fa-clock-o fa-fw"></i>1 min</small>
+				<small class="pull-right time-stamp"><i class="fa fa-clock-o fa-fw"></i>{{getFoodTime(food.createdAt)}}</small>
 				<h4><i class="fa fa-cutlery"></i>Zak ate...</h4>
 				<h4 class="dish-name">{{food.attributes.name}}</h4>
-				<!--small class="pull-right">0.2 mi</small>
-				<h5><i class="fa fa-map-marker"></i><a href="http://www.hobees.com" target="_blank">Hobee's Restaurant</a></h5-->
+				{{food.attributes.restaurant.name}}
+				<h5><i class="fa fa-map-marker"></i><a href="http://www.hobees.com" target="_blank">{{food.attributes.restaurant.location.display_address[1]}}</a></h5>
 				<img src="{{food.attributes.photo._url}}" />
 				<a href="#" class="pull-right badge" data-toggle="modal" data-target="#recipeModal" ng-click="findMatchingFoodFromPearson(food)"> <span class="glyphicon glyphicon-list-alt"></span> Cook it </a>
 				<a href="#" class="badge" ng-click="findMatchingFoodFromPearson(food)"> <img src="assets/spork.png" class="icon-spork" /> Sporkit (34) </a>
