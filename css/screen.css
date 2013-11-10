@@ -223,6 +223,11 @@ background-position: center 12px;
 }
 
 /* what friends are eating */
+.main-content .thumbnail address {
+	margin: 0px;
+	padding: 5px 0px 10px 22px;
+	font-size: 12px;
+}
 .main-content .thumbnail img {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -231,11 +236,43 @@ background-position: center 12px;
 .main-content .thumbnail .icon-spork {
 	margin-bottom: 0px;
 }
+.main-content .thumbnail .badge-warning {
+    background-color: #d58512;
+}
 .main-content .thumbnail {
 	background: white;
 	padding: 10px 20px;
 	margin-bottom: 20px;
 }
+.thumbnail .caption p.short {
+    font-size: 12px;
+    padding: 10px 0px 0px 0px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.thumbnail .caption p.long {
+    display: none;
+    border: 1px solid rgb(204, 204, 204);
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0px 1px 5px rgb(204, 204, 204);
+    padding: 10px;
+    text-align: left;
+}
+p.short:hover + p.long {
+    display: block;
+    color: black;
+    font-size: 12px;
+    position:absolute;
+    top: 240px;
+    left: 10px;
+    right: 10px;
+    width: auto;
+    z-index: 10;
+}
+p.short:hover { cursor: pointer; }
+
 .main-content .thumbnail h4 {
 	padding: 0px 0px 10px 0px;
 	border-bottom: 1px solid #eee;
@@ -245,7 +282,8 @@ background-position: center 12px;
 .main-content .thumbnail h4.dish-name, .main-content .thumbnail h5 {
 	text-transform: capitalize;
 	border: none;
-	padding-bottom: 5px;
+	padding-bottom: 0px;
+	margin: 10px 0px 0px 0px;
 }
 .main-content .thumbnail i {
 	margin-right: 10px;
@@ -401,8 +439,10 @@ background-position: center 12px;
 }
 
 /*modal*/
-.modal-dialog {
-	width: 700px !important;
+
+.modal-wide .modal-dialog {
+    min-width: 750px;
+    overflow: hidden;
 }
 .modal-header {
 	background-color: #eee;
@@ -419,6 +459,9 @@ background-position: center 12px;
 }
 .modal-body .recipe-detail:last-child {
 	border-bottom: none;
+}
+.recipe-detail .text-warning {
+    color: #f47f1f;
 }
 .recipe-detail ul {
 	padding-left: 48px;
@@ -450,7 +493,22 @@ background-position: center 12px;
 .compare-prices .panel-heading h3 {
 	font-family: 'Rock Salt', cursive !important;
 }
-
+.main-content .compare-prices {
+	margin-bottom: 0px;
+}
+#savings .alert-info {
+	text-align: center;
+}
+.product-title {
+    display: block;
+    height: 50px;
+    margin-bottom: 10px !important;
+    font-size: 12px;
+}
+.panel-heading .btn-warning {
+    background-color: #f47f1f;
+    border-color: #d58512;
+}
 
 /*content*/
 .search-bar, .hunt-bar {
@@ -458,6 +516,9 @@ background-position: center 12px;
 }
 .hunt-bar {
 	margin-top: 10px;
+}
+.hunt-bar .btn-group {
+    margin-left: 10px;
 }
 .search-bar .btn-default {
 	margin-right: -1px;
@@ -683,7 +744,7 @@ img.hungry {
 	margin: 0px !important;
 }
 .media address p {
-	margin-left: 278px;
+	margin-left: 373px;
 }
 .media-item {
 	border-bottom: 1px solid #eee;
@@ -782,6 +843,7 @@ img.hungry {
   margin: 0;
   padding:0;
   left:0;
+  width: 100%;
 }
 .btn-upload {
    overflow:hidden;
