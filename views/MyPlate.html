@@ -40,7 +40,7 @@
                     <address>
                         {{food.attributes.restaurant.location.display_address[1]}}
                     </address>
-                    <img src="{{food.attributes.photo._url}}" />
+                    <img src="{{food.attributes.photo._url}}" class="food-photo" />
                     <i class="fa fa-heart fa-muted"></i>
                     <a href="#" class="pull-right badge badge-warning" data-toggle="modal" data-target="#recipeModal" ng-click="findMatchingFoodFromPearson(food)"> <img src="assets/spork.png" class="icon-spork" /> Sporkit </a>
 
@@ -72,11 +72,11 @@
                         <i class="fa fa-refresh fa-spin fa-lg"></i>
                     </div>
                 </div>
-                <ul>
+                <!--ul>
                     <li ng-repeat="restaurant in nearByRestaurants.businesses">
                         {{restaurant.name}}
                     </li>
-                </ul>
+                </ul-->
             </div>
         </div>
     </div><!--/tab-content-->
@@ -193,17 +193,7 @@
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <div class="btn-group btn-group-xs pull-right">
-                                        <button type="button" class="btn btn-warning">
-                                            All Products
-                                        </button>
-                                        <button type="button" class="btn btn-warning">
-                                            Kohl's
-                                        </button>
-                                        <button type="button" class="btn btn-warning">
-                                            Walmart
-                                        </button>
-                                    </div>
+                                    <img src="assets/logo_kohls.jpg" class="img-thumbnail pull-right logo-retailer"/>
                                     <strong>Items to consider when cooking this dish</strong>
                                 </div>
                                 <div class="panel-body">
@@ -220,10 +210,13 @@
                                                         {{relatedProductWalmart.longDescription}}
                                                     </p>
                                                     <hr>
-                                                    <p>
-                                                        <a href="#" class="btn btn-primary pull-right" role="button">Buy</a>
-                                                        <h5>Sale Price: $21.95</h5>
+                                                    <p class="btn-buy pull-right">
+                                                        <a href="#" class="btn btn-primary" role="button">Buy</a>
                                                     </p>
+                                                    <div ng-show="relatedProductWalmart.msrp" class="sale-price">
+                                                        <h3>${{relatedProductWalmart.msrp}}</h3>
+                                                    </div>
+                                                    <hr class="clear" />
                                                 </div>
                                             </div>
                                         </div>

@@ -181,6 +181,7 @@ background-position: center 12px;
 /* Landing Page Intro */
 .marketing .col-lg-4 {text-align: center; }
 .marketing .col-lg-4 .fa-6 {font-size: 15em; }
+.marketing .col-lg-4 .fa-5 {font-size: 12em; padding: 22px 0px; }
 .marketing .col-lg-4 .fa-spork { 
 	background: url(../assets/fa-spork.png) no-repeat top center; 
 	width: 100%; 
@@ -228,10 +229,14 @@ background-position: center 12px;
 	padding: 5px 0px 10px 22px;
 	font-size: 12px;
 }
-.main-content .thumbnail img {
+.main-content .thumbnail img.food-photo {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	margin-bottom: 10px;
+	height: 217px;
+	width: 308px;
+	display:  block;
+	overflow: hidden;
 }
 .main-content .thumbnail .icon-spork {
 	margin-bottom: 0px;
@@ -508,6 +513,9 @@ p.short:hover { cursor: pointer; }
 .panel-heading .btn-warning {
     background-color: #f47f1f;
     border-color: #d58512;
+}
+.logo-retailer {
+    margin-top: -3px;
 }
 
 /*content*/
