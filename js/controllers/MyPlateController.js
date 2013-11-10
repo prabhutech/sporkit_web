@@ -12,7 +12,12 @@ function($scope, Facebook) {
             $scope.$apply();
         }
     });
-    $scope.findMatchingFoodFromPearson = Facebook.findMatchingFoodFromPearson;
+
+    $scope.findMatchingFoodFromPearson = function(selectedFood) {
+        //$scope.selectedFood = selectedFood;
+        Facebook.getRelatedProductsWallmart(selectedFood);
+        Facebook.findMatchingFoodFromPearson(selectedFood);
+    };
 
     $scope.$on('findMatchingFoodFromPearson-onsuccess', function(event, response) {
         $scope.matchingFoodFromPearson = response.results[0];
@@ -33,5 +38,12 @@ function($scope, Facebook) {
     $scope.getFoodTime = function(d1) {
         return jQuery.timeago(d1);
     };
+
+    $scope.$on('getRelatedProductsWallmart-onsuccess', function(event, response) {
+        $scope.relatedProductsWallmart = response.items;
+        if (!$scope.$$phase) {
+            $scope.$apply();
+        }
+    });
 
 }]);

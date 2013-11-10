@@ -48,13 +48,22 @@ FacebookProvider.service('Facebook', function($rootScope) {
                 }
             });
         },
-        getRecipeForPearsonFood: function(food) {
+        getRecipeForPearsonFood : function(food) {
             $.ajax({
                 'url' : food.url,
                 'dataType' : 'jsonp',
                 //'jsonpCallback' : 'cb',
                 'success' : function(data, textStats, XMLHttpRequest) {
                     $rootScope.$broadcast('getRecipeForPearsonFood-onsuccess', data);
+                }
+            });
+        },
+        getRelatedProductsWallmart : function(food) {
+            $.ajax({
+                'url' : 'http://walmartlabs.api.mashery.com/v1/search?query=' + food.attributes.name + '&format=json&apiKey=vakres6za65mh5huj5s6javj',
+                'dataType' : 'jsonp',
+                'success' : function(data, textStats, XMLHttpRequest) {
+                    $rootScope.$broadcast('getRelatedProductsWallmart-onsuccess', data);
                 }
             });
         },
