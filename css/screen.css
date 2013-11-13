@@ -8,12 +8,17 @@ body {
 	padding: 120px 0px 0px 0px;
 	background: url(../assets/bg.gif) repeat left top;
 	height: 100%;
+	font-family: 'Raleway', helvetica, arial, sans-serif !important;
 }
 #wrap {
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
 	margin: 0 auto -60px;
+}
+p {
+    font-size: 120%;
+    font-weight: 300;
 }
 
 /* lander */
@@ -139,7 +144,7 @@ background-position: center 12px;
 }
 .jumbotron p {
 	font-size: 32px;
-	font-weight: 200;
+	font-weight: 300;
 	color: #333;
 	margin: 0px;
 	text-shadow: 0 1px 1px #ffab4e;
@@ -155,11 +160,12 @@ background-position: center 12px;
 .intro-content span {
 	color: #333;
 	display: block;
-	width: 280px;
+	width: 350px;
 	margin: 20px auto;
-	font-weight: 400;
-	font-size: 70%;
+	font-size: 80%;
 	line-height: 1.2em;
+	font-weight: 500;
+	text-shadow: 0 1px 1px #ffab4e;
 }
 .btn-login {
 	font-size: 1.5em !important;
@@ -189,7 +195,13 @@ background-position: center 12px;
 	display: block; 
 	margin: 30px 0px;
 }
-.marketing .col-lg-4 h2 {padding: 0px; margin: 0px; font-weight: 100; font-size: 4em; }
+.marketing .col-lg-4 h2 {
+    font-family: 'Raleway', helvetica, arial, sans-serif;
+    padding: 0px; 
+    margin: 0px; 
+    font-weight: 100; 
+    font-size: 4em; 
+}
 
 
 /* main-content */
