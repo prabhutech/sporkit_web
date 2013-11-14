@@ -1,4 +1,4 @@
-SporkitApp.controller('TakePhotoController', ['$scope', 'Facebook',
+SporkitControllerModule.controller('TakePhotoController', ['$scope', 'Facebook',
 function($scope, Facebook) {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {

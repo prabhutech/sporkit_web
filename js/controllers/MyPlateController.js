@@ -1,4 +1,4 @@
-SporkitApp.controller('MyPlateController', ['$scope', 'Facebook',
+SporkitControllerModule.controller('MyPlateController', ['$scope', 'Facebook',
 function($scope, Facebook) {
     Facebook.getAllFoods();
 

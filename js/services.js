@@ -1,5 +1,4 @@
-var FacebookProvider = angular.module('FacebookProvider', []);
-FacebookProvider.service('Facebook', function($rootScope) {
+SporkitServiceModule.service('Facebook', function($rootScope) {
     var Food = Parse.Object.extend("Food");
     var foodQuery = new Parse.Query(Food);
 

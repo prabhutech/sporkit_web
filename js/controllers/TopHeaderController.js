@@ -1,4 +1,4 @@
-SporkitApp.controller('TopHeaderController', ['$scope', 'Facebook', 'Utils',
+SporkitControllerModule.controller('TopHeaderController', ['$scope', 'Facebook', 'Utils',
 function($scope, Facebook, Utils) {
 
 }]); 

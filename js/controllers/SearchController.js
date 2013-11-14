@@ -1,4 +1,4 @@
-SporkitApp.controller('SearchController', ['$scope', 'Facebook', 'Utils',
+SporkitControllerModule.controller('SearchController', ['$scope', 'Facebook', 'Utils',
 function($scope, Facebook, Utils) {
     var map;
     var geocoder = new google.maps.Geocoder();

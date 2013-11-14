@@ -1,4 +1,5 @@
-SporkitApp.service('Utils', [
+var SporkitServiceModule = angular.module('SporkitServiceModule', []);
+SporkitServiceModule.service('Utils', [
 function() {
     var Utils = {};
 

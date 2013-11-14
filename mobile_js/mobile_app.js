@@ -1,8 +1,8 @@
 // Initialize the Parse object first.
 Parse.initialize("fyDP4zl5WB5CxosiOccG8uAA90xhA48nipoX36oo", "Vq7qc3pqWdM7OfNHZ2gwXWHrIq7ydLBaOSEMLkxe");
 
-var SporkitApp = angular.module('SporkitApp', ['SporkitServiceModule', 'SporkitControllerModule', 'SporkitDirectiveModule']);
-SporkitApp.run(function($rootScope) {
+var SporkitMobileApp = angular.module('SporkitMobileApp', ['SporkitServiceModule', 'SporkitControllerModule', 'SporkitDirectiveModule']);
+SporkitMobileApp.run(function($rootScope) {
     window.fbAsyncInit = function() {
         //Once the Facebook JavaScript SDK is loaded, initialize FB and Parse.FacebookUtils
 
@@ -30,20 +30,20 @@ SporkitApp.run(function($rootScope) {
         }(document));
 });
 
-SporkitApp.config(function($routeProvider) {
+SporkitMobileApp.config(function($routeProvider) {
     $routeProvider.when('/', {
-        templateUrl : 'views/MyPlate.html'
+        templateUrl : 'mobile_views/MyPlateMobile.html'
     }).when('/myplate', {
-        templateUrl : 'views/MyPlate.html'
+        templateUrl : 'mobile_views/MyPlateMobile.html'
     }).when('/takephoto', {
-        templateUrl : 'views/TakePhoto.html'
+        templateUrl : 'mobile_views/TakePhotoMobile.html'
     }).when('/search', {
-        templateUrl : 'views/Search.html'
+        templateUrl : 'mobile_views/SearchMobile.html'
     }).when('/profile', {
-        templateUrl : 'views/Profile.html'
+        templateUrl : 'mobile_views/ProfileMobile.html'
     });
 }); 
 
 angular.element(document).ready(function(){
-    angular.bootstrap($(document.body), ['SporkitApp']);
+    angular.bootstrap($(document.body), ['SporkitMobileApp']);
 });

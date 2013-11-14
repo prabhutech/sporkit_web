@@ -1,4 +1,5 @@
-SporkitApp.controller('SporkitAppController', ['$scope', 'Facebook',
+var SporkitControllerModule = angular.module('SporkitControllerModule', []);
+SporkitControllerModule.controller('SporkitAppController', ['$scope', 'Facebook',
 function($scope, Facebook) {
 
     $scope.currentUser = Facebook.currentUser;

@@ -1,4 +1,4 @@
-SporkitApp.controller('ProfileController', ['$scope', 'Facebook',
+SporkitControllerModule.controller('ProfileController', ['$scope', 'Facebook',
 function($scope, Facebook) {
     //Facebook.getFriends();
     $scope.currentUser = Parse.User.current();
