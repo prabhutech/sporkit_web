@@ -36,7 +36,7 @@
     </head>
     <body>
         <div id="fb-root"></div>
-        <div ng-controller="SporkitAppController" id="wrap">
+        <div ng-controller="SporkitMainController" id="wrap">
             <div ng-include src="'views/LoginView.html'" ng-hide="isLoggedIn"></div>
             <div ng-include src="'views/HomeView.html'" ng-show="isLoggedIn"></div>
             <div ng-view class="container main-content" ng-show="isLoggedIn"></div>

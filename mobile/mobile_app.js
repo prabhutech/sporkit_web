@@ -32,15 +32,15 @@ SporkitMobileApp.run(function($rootScope) {
 
 SporkitMobileApp.config(function($routeProvider) {
     $routeProvider.when('/', {
-        templateUrl : 'mobile_views/MyPlateMobile.html'
+        templateUrl : 'views/MyPlate.html'
     }).when('/myplate', {
-        templateUrl : 'mobile_views/MyPlateMobile.html'
+        templateUrl : 'views/MyPlate.html'
     }).when('/takephoto', {
-        templateUrl : 'mobile_views/TakePhotoMobile.html'
+        templateUrl : 'views/TakePhoto.html'
     }).when('/search', {
-        templateUrl : 'mobile_views/SearchMobile.html'
+        templateUrl : 'views/Search.html'
     }).when('/profile', {
-        templateUrl : 'mobile_views/ProfileMobile.html'
+        templateUrl : 'views/Profile.html'
     });
 }); 
 
