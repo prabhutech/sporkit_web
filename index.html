@@ -36,10 +36,17 @@
     </head>
     <body>
         <div id="fb-root"></div>
-        <div ng-controller="SporkitAppController">
+        <div ng-controller="SporkitAppController" id="wrap">
             <div ng-include src="'views/LoginView.html'" ng-hide="isLoggedIn"></div>
             <div ng-include src="'views/HomeView.html'" ng-show="isLoggedIn"></div>
             <div ng-view class="container main-content" ng-show="isLoggedIn"></div>
+        </div><!--wrap-->
+        <div id="footer">
+            <div class="container">
+                <p class="credit">
+                    &copy; 2013 Spork.it All Rights Reserved.
+                </p>
+            </div>
         </div>
     </body>
 </html>

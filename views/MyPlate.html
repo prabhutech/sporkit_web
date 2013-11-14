@@ -1,18 +1,4 @@
-<div  ng-controller="MyPlateController">
-    <!--ul class="pager pull-right filter">
-    <li class="active">
-    <a href="#">All</a>
-    </li>
-    <li>
-    <a href="#">Latest</a>
-    </li>
-    <li>
-    <a href="#">Popular</a>
-    </li>
-    <li>
-    <a href="#">Nearest</a>
-    </li>
-    </ul-->
+<div ng-controller="MyPlateController">
     <div class="col-md-6 hunt-bar pull-right">
         <div class="btn-group pull-right">
             <a href="#listview" data-toggle="tab" class="btn btn-default"> <i class="fa fa-th"></i> List View </a>
@@ -41,25 +27,8 @@
                         {{food.attributes.restaurant.location.display_address[1]}}
                     </address>
                     <img src="{{food.attributes.photo._url}}" class="food-photo" />
-                    <i class="fa fa-heart fa-muted"></i>
-                    <a href="#" class="pull-right badge badge-warning" data-toggle="modal" data-target="#recipeModal" ng-click="findMatchingFoodFromPearson(food)"> <img src="assets/spork.png" class="icon-spork" /> Sporkit </a>
+                    <a href="#" class="pull-right badge badge-warning"> <img src="assets/spork.png" class="icon-spork" /> Sporkit </a>
 
-                    <!--ul class="action-bar pull-right">
-                    <li>
-                    <a href="#"><i class="fa fa-thumb-tack fa-fw fa-lg"></i>(19)</a>
-                    </li>
-                    <li>
-                    <a href="#"><i class="fa fa-coffee fa-fw fa-lg"></i></a>
-                    </li>
-                    <li>
-                    <a href="#"><i class="fa fa-comments fa-fw fa-lg"></i>(7)</a>
-                    </li>
-                    </ul>
-                    <div class="tags">
-                    <span class="badge">#delicious</span>
-                    <span class="badge">#brekfast</span>
-                    <span class="badge">#spicy</span>
-                    </div-->
                     <hr class="clear" />
                 </div><!--/thumbnail-->
             </div><!--/col-->
