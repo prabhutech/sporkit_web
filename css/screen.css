@@ -1061,9 +1061,6 @@ input[type="text"] {
         top: 0;
         width: 50%; /* 6 columns */
     }
-    #footer {
-        display: none;
-    }
 }
 @media screen and (max-width: 650px) {
     .main-content .thumbnail {
