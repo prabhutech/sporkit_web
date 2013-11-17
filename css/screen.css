@@ -201,24 +201,24 @@ a.appstore {
 .marketing {
     padding: 0px 0px 50px 0px;
 }
-.marketing .col-lg-4 {
+.marketing .col-sm-4 {
     text-align: center;
 }
-.marketing .col-lg-4 .fa-6 {
+.marketing .col-sm-4 .fa-6 {
     font-size: 15em;
 }
-.marketing .col-lg-4 .fa-5 {
+.marketing .col-sm-4 .fa-5 {
     font-size: 12em;
     padding: 22px 0px;
 }
-.marketing .col-lg-4 .fa-spork {
+.marketing .col-sm-4 .fa-spork {
     background: url(../assets/fa-spork.png) no-repeat top center;
     width: 100%;
     height: 152px;
     display: block;
     margin: 30px 0px;
 }
-.marketing .col-lg-4 h2 {
+.marketing .col-sm-4 h2 {
     font-family: 'Raleway', helvetica, arial, sans-serif;
     padding: 0px;
     margin: 0px;
@@ -457,6 +457,12 @@ p.short:hover {
 }
 .nav li.dropdown.open > .dropdown-toggle, .nav li.dropdown.active > .dropdown-toggle, .nav li.dropdown.open.active > .profile-dd {
     background: none !important;
+}
+.navbar-toggle {
+    background-color: #333 !important;
+}
+.navbar-toggle .icon-bar {
+    background-color: white;
 }
 
 /*search*/
@@ -927,9 +933,100 @@ input[type="text"] {
  * Off Canvas
  * --------------------------------------------------
  */
+@media screen and (min-width: 1199px) {
+    .search-bar {
+        width: 32% !important;
+    }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+     .search-bar {
+        width: 38% !important;
+    }  
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+     .btn-upload {
+         width: 78%;
+     }
+     .form-upload .form-group input, .form-upload .form-group textarea {
+         width: 50%;
+     }
+     .price-input, .loc-type-input {
+         width: 50%;
+         margin-left: 50%;
+     }
+     .add-price, .add-loc-type, .save-food {
+         margin-left: 50%;
+         margin-bottom: 10px !important;
+     }
+     .main-content .thumbnail {
+         float: none !important;
+     }
+     .media address p {
+         margin-left: 0px;
+     }
+}
+@media screen and (min-width: 745px) and (max-width: 916px) {
+     .masthead .container { 
+         background: url(../assets/img-jumbotron.png) no-repeat -150px top;
+         max-width: 100%;
+     }
+     .phone {
+    background: url(../assets/img-jumbotron-phone.png) no-repeat left 0px;
+    position: relative;
+    z-index: 10;
+    left: -150px;
+    top: -1px;
+    display: block;
+    width: 380px;
+    height: 427px;
+    float: left;
+    -webkit-animation-name: phone-slider;
+    -webkit-animation-duration: 3.3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+}
+
+    @-webkit-keyframes phone-slider {
+    0% {
+    background-position: left 300px;
+    }
+    25% {
+    background-position: left 300px;
+    }
+    100% {
+    background-position: left 12px;
+    }
+    }
+     .intro-content {
+         margin-left: 200px;
+         padding-left: 60px;
+         width: 450px;
+     }
+     a.appstore {
+         left: 58% !important;
+     }
+     
+}
+@media screen and (max-width: 745px) {
+    .masthead .container {
+        background: none;
+    }
+     .phone {
+        display: none;
+     }
+     .intro-content {
+         margin-left: 0px;
+     }
+     .jumbotron h1 {
+         margin-left: auto !important;
+     }
+     a.appstore {
+         left: 43% !important;
+     }
+}
 @media screen and (max-width: 767px) {
     html {
-        overflow: hidden;
+        overflow-x: hidden;
     }
     .col-xs-12, .col-sm-9 {
         position: absolute !important;
@@ -963,5 +1060,130 @@ input[type="text"] {
         position: absolute;
         top: 0;
         width: 50%; /* 6 columns */
+    }
+    #footer {
+        display: none;
+    }
+}
+@media screen and (max-width: 650px) {
+    .main-content .thumbnail {
+         float: none !important;
+     }
+     .media address p {
+         margin-left: 0px;
+     }
+}
+@media screen and (max-width: 991px) {
+    .search-bar {
+        width: 50% !important;
+    }
+    .intro-content {
+        background: none;
+    }
+    a.appstore {
+        top: 300px;
+        left: 53%;
+    }
+    .jumbotron h1 {
+        margin-left: 30px;
+    }
+    
+}
+@media screen and (max-width: 767px) {
+    .navbar-inner {
+        height: 220px !important;
+        
+    }
+    .nav-pills {
+        margin: 10px auto 0 auto;
+        text-align: center;
+    }
+    .nav-pills>li {
+        float: none !important;
+    }
+    .main-content {
+        margin-top: 120px;
+    }
+    .main-content h1 {
+        text-align: center;
+    }
+    .hunt-bar {
+        margin-bottom: 20px;
+    }
+    .hunt-bar .input-group {
+        width: 100%;
+    }
+    .hunt-bar .btn-group {
+        width: 219px;
+        margin: 0 auto 50px auto;
+        float: none !important;
+        display: block !important;
+    }
+    .latest .main-content {
+        margin-top: 30px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .jumbotron h1 {
+        background: url(../assets/logo.png) no-repeat top left;
+        width: 219px;
+        height: 42px;
+    }
+    .intro-content span {
+        width: auto;
+    }
+    a.appstore {
+        left: 32% !important;
+    }
+    .latest .main-content {
+        margin-top: 30px;
+    }
+    .marketing .col-sm-4 .fa-6 {
+        font-size: 5em;
+    }
+    .marketing .col-sm-4 h2 {
+        font-size: 2em;
+    }
+    .marketing .col-sm-4 .fa-5 {
+        font-size: 4em;
+    }
+    .marketing .col-sm-4 .fa-spork {
+        background: url(../assets/fa-spork-sm.png) no-repeat top center;
+        width: 100%;
+        height: 60px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .logo {
+        float: none !important;
+        margin: 0 auto;
+        display: block;
+    }
+    .search-bar {
+        width: 100% !important;
+        float: none !important;
+        margin-top: 10px;
+    }
+    .navbar-inner {
+        height: 270px !important;
+        
+    }
+    .main-content {
+        margin-top: 160px;
+    }
+    .main-content h1 {
+        text-align: center;
+    }
+    .hunt-bar {
+        margin-bottom: 20px;
+    }
+    .hunt-bar .input-group {
+        width: 100%;
+    }
+    .hunt-bar .btn-group {
+        width: 219px;
+        margin: 0 auto 50px auto;
+        float: none !important;
+        display: block !important;
     }
 }
