@@ -13,21 +13,6 @@
     <a href="#">Nearest</a>
     </li>
     </ul-->
-    <div class="col-md-6 hunt-bar pull-right">
-        <div class="btn-group pull-right">
-            <a href="#listview" data-toggle="tab" class="btn btn-default"> <i class="fa fa-th"></i> List View </a>
-            <a href="#mapview" data-toggle="tab" class="btn btn-default"> <i class="fa fa-map-marker"></i> Map View </a>
-        </div>
-        <div class="input-group">
-            <input class="form-control" type="text" placeholder="Hunt for your cravings..." value="{{currentLocationAddress}}">
-            <span class="input-group-btn">
-                <button class="btn btn-warning" type="button">
-                    <i class="fa fa-crosshairs fa-lg"></i>
-                </button> </span>
-        </div><!--/input-->
-    </div><!--/col-->
-
-    <h1>Spork Menu <span>What people are eating nearby</span></h1>
 
     <div class="tab-content">
         <div ng-repeat="food in foods" class="row-fluid tab-pane active" id="listview">
