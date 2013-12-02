@@ -32,8 +32,8 @@ p {
 }
 .masthead .container {
     background: url(../assets/img-jumbotron.png) no-repeat center top;
-    height: 426px;
-    padding-top: 100px;
+    height: 326px;
+    margin-top: -40px;
     -webkit-animation-name: blur;
     -webkit-animation-duration: 2s;
     -webkit-animation-timing-function: linear;
@@ -49,14 +49,13 @@ p {
 }
 }
 .phone {
-    background: url(../assets/img-jumbotron-phone.png) no-repeat right 0px;
+    background: url(../assets/img-jumbotron-phone.png) no-repeat right -47px;
     position: relative;
     z-index: 10;
-    left: 120px;
     top: -380px;
     display: block;
     width: 483px;
-    height: 427px;
+    height: 380px;
     -webkit-animation-name: phone-slider;
     -webkit-animation-duration: 3.3s;
     -webkit-animation-iteration-count: 1;
@@ -70,11 +69,11 @@ background-position: center 300px;
 background-position: center 300px;
 }
 100% {
-background-position: center 0px;
+background-position: center -47px;
 }
 }
 .masthead-links {
-    margin: 0 0 25px 0;
+    margin: -50px 0 25px 0;
     padding: 0px;
     list-style: none;
 }
@@ -115,7 +114,6 @@ background-position: center 0px;
     background-color: #c26600 !important; /* Old browsers */
 }
 .jumbotron h1 {
-    font-size: 80px;
     font-weight: bold;
     letter-spacing: -1px;
     line-height: 1;
@@ -123,13 +121,12 @@ background-position: center 0px;
     text-shadow: 0 1px 1px #ccc, 0 0 3px #ccc;
     display: block;
     text-indent: -9999px;
-    background: url(../assets/logo2.png) no-repeat top left;
-    height: 81px;
+    background: url(../assets/logo.png) no-repeat top center;
+    height: 42px;
     width: 421px;
     margin: 20px auto;
 }
 .jumbotron p {
-    font-size: 48px;
     font-weight: 300;
     color: #333;
     margin: 0px;
@@ -146,6 +143,7 @@ background-position: center 0px;
     margin: 20px auto;
     line-height: 1.2em;
     font-weight: 500;
+    font-size: 80%;
 }
 .signin {
     background-color: #eee;
@@ -153,7 +151,7 @@ background-position: center 0px;
     padding-top: 100px;
 }
 .btn-login {
-    font-size: 2.5em !important;
+    font-size: 1.5em !important;
 }
 
 /* Link styles (used on .masthead-links as well) */
