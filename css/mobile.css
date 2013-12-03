@@ -5,7 +5,7 @@ html {
     overflow: auto;
 }
 body {
-    padding: 120px 0px 0px 0px;
+    padding: 0px;
     background-color: #eee !important;
     height: 100%;
     font-family: 'Raleway', helvetica, arial, sans-serif !important;
@@ -108,7 +108,6 @@ background-position: center -47px;
 .jumbotron {
     position: relative;
     padding: 20px 0 0px !important;
-    margin-top: -120px;
     color: #fff;
     text-align: center;
     background-color: #c26600 !important; /* Old browsers */
@@ -366,6 +365,12 @@ p.short:hover {
     height: 110px;
     background: #c26600 !important; /* Old browsers */
     color: #333;
+}
+.navbar-inner a {
+    color: #333;
+}
+.navbar-inner a:hover {
+    color: #f90;
 }
 .navbar-header span {
     margin: 7px 10px;
@@ -734,7 +739,7 @@ img.hungry {
 }
 .friend-ate {
     margin: 0px;
-    padding: 0px   :
+    padding: 0px    :
 }
 .friend-ate li, .friend-ate li a {
     list-style: none;
@@ -1029,7 +1034,7 @@ input[type="text"] {
         float: none !important;
     }
     .main-content {
-        margin-top: 120px;
+        margin-top: 80px;
     }
     .main-content h1 {
         text-align: center;
