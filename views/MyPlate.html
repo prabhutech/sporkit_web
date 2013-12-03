@@ -13,14 +13,14 @@
         </div><!--/input-->
     </div><!--/col-->
 
-    <h1>Spork Menu <span>What people are eating nearby</span></h1>
+    <h1>Meal Feed <span>What people are eating nearby</span></h1>
 
     <div class="tab-content">
         <div ng-repeat="food in foods" class="row-fluid tab-pane active" id="listview">
             <div class="col-md-4">
                 <div class="thumbnail">
                     <small class="pull-right time-stamp"><i class="fa fa-clock-o fa-fw"></i>{{getFoodTime(food.createdAt)}}</small>
-                    <h4><i class="fa fa-cutlery"></i>Zak ate...</h4>
+                    <h4><img src="assets/cover.png"/>Zak ate...</h4>
                     <h4 class="dish-name">{{food.attributes.name}}</h4>
                     <h5><i class="fa fa-map-marker"></i><a href="#">{{food.attributes.restaurant.name}}</a></h5>
                     <address>
