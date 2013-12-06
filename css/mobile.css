@@ -359,7 +359,7 @@ p.short:hover {
     z-index: 1010 !important;
 }
 .navbar .container {
-    padding: 10px;
+    padding: 20px;
 }
 .navbar-inner {
     height: 110px;
@@ -373,7 +373,7 @@ p.short:hover {
     color: #f90;
 }
 .navbar-header span {
-    margin: 7px 10px;
+    margin: 7px 0px;
 }
 .logo {
     display: block;
@@ -1084,7 +1084,6 @@ input[type="text"] {
 }
 @media screen and (max-width: 425px) {
     .logo {
-        float: none !important;
         margin: 0 auto;
         display: block;
     }
@@ -1093,9 +1092,12 @@ input[type="text"] {
         float: none !important;
         margin-top: 10px;
     }
+<<<<<<< HEAD
+=======
     .navbar-inner {
         height: 70px !important;
     }
+>>>>>>> f7f131c059845e27ab66f8707e67ff28b6b989e6
     .main-content {
         margin-top: 160px;
     }
