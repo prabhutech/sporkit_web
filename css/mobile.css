@@ -31,7 +31,7 @@ p {
     color: #fff;
 }
 .masthead .container {
-    background: url(../assets/img-jumbotron.png) no-repeat center top;
+    background: url(../assets/img-jumbotron.png) no-repeat center -15px;
     height: 326px;
     margin-top: -40px;
     -webkit-animation-name: blur;
@@ -49,7 +49,7 @@ p {
 }
 }
 .phone {
-    background: url(../assets/img-jumbotron-phone.png) no-repeat right -47px;
+    background: url(../assets/img-jumbotron-phone.png) no-repeat -40px -47px;
     position: relative;
     z-index: 10;
     top: -380px;
@@ -63,13 +63,13 @@ p {
 }
 @-webkit-keyframes phone-slider {
 0% {
-background-position: center 300px;
+background-position: -40px 300px;
 }
 25% {
-background-position: center 300px;
+background-position: -40px 300px;
 }
 100% {
-background-position: center -47px;
+background-position: -40px -47px;
 }
 }
 .masthead-links {
@@ -79,7 +79,7 @@ background-position: center -47px;
 }
 .masthead-links li {
     color: rgba(255,255,255,.25);
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .masthead-links li a:hover {
@@ -123,7 +123,7 @@ background-position: center -47px;
     background: url(../assets/logo.png) no-repeat top center;
     height: 42px;
     width: 421px;
-    margin: 20px auto;
+    margin: 10px auto 0 auto;
 }
 .jumbotron p {
     font-weight: 300;
@@ -138,21 +138,24 @@ background-position: center -47px;
 .intro-content span {
     color: #333;
     display: block;
-    width: 70%;
-    margin: 20px auto;
+    width: 90%;
+    margin: 10px auto;
     line-height: 1.2em;
     font-weight: 500;
-    font-size: 80%;
+    font-size: 70%;
 }
 .signin {
     background-color: #eee;
     margin-top: -380px;
-    padding-top: 100px;
+    padding-top: 60px;
+    position: relative;
+    z-index: 100;
 }
-.btn-login {
-    font-size: 1.5em !important;
+.signin li.privacy {
+    font-size: 60%;
+    color: #333;
+    font-weight: 500;
 }
-
 /* Link styles (used on .masthead-links as well) */
 .jumbotron a {
     color: #fff;
@@ -1060,9 +1063,6 @@ input[type="text"] {
         background: url(../assets/logo.png) no-repeat top left;
         width: 219px;
         height: 42px;
-    }
-    .intro-content span {
-        width: auto;
     }
     .latest .main-content {
         margin-top: 30px;
