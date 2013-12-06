@@ -27,6 +27,7 @@ SporkitServiceModule.service('Facebook', function($rootScope) {
         getAllFoods : function(user) {
             if (user) {
                 foodQuery.equalTo("createdBy", user);
+                foodQuery.include("createdBy");
             }
             foodQuery.find(function(response) {
                 createResponse('get-all-foods', response);

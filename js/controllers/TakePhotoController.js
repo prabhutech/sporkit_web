@@ -38,7 +38,7 @@ function($scope, Facebook) {
             restaurant : selectedRestaurantObj[0],
             photo : parseFile
         });
-        food.relation("createdBy").add(currentUser);
+        food.set("createdBy", currentUser);
         food.save();
     };
     $scope.nearByRestaurantNames = [];

@@ -1,6 +1,37 @@
 SporkitControllerModule.controller('MyPlateController', ['$scope', 'Facebook',
 function($scope, Facebook) {
+    var Sporks = Parse.Object.extend("Spork");
+    var currentUser = Parse.User.current();
+    var Foods = Parse.Object.extend("Food");
+
     Facebook.getAllFoods();
+
+    $scope.sporkTheFood = function(foodObj) {
+        var food = new Foods();
+        food.id = foodObj.id;
+
+        var spork = new Sporks();
+
+        var sporkQuery = new Parse.Query(Sporks);
+        sporkQuery.equalTo("createdBy", currentUser);
+        sporkQuery.equalTo("food", food);
+        sporkQuery.find({
+            success : function(results) {
+                if (results.length == 0) {
+                    spork.set("createdBy", currentUser);
+                    spork.set("food", food);
+                    spork.save();
+                    console.log('sporked it');
+                } else {
+                    console.log('Cannot spork again');
+                }
+            },
+            error : function(error) {
+                console.log("Error: " + error.code + " " + error.message);
+            }
+        });
+
+    };
 
     $scope.$on('get-all-foods-onsuccess', function(event, response) {
         console.log(response);
@@ -13,37 +44,8 @@ function($scope, Facebook) {
         }
     });
 
-    $scope.findMatchingFoodFromPearson = function(selectedFood) {
-        //$scope.selectedFood = selectedFood;
-        Facebook.getRelatedProductsWallmart(selectedFood);
-        Facebook.findMatchingFoodFromPearson(selectedFood);
-    };
-
-    $scope.$on('findMatchingFoodFromPearson-onsuccess', function(event, response) {
-        $scope.matchingFoodFromPearson = response.results[0];
-        Facebook.getRecipeForPearsonFood(response.results[0]);
-        console.dir($scope.matchingFoodFromPearson);
-        if (!$scope.$$phase) {
-            $scope.$apply();
-        }
-    });
-
-    $scope.$on('getRecipeForPearsonFood-onsuccess', function(event, response) {
-        $scope.recipeForPearsonFood = response;
-        if (!$scope.$$phase) {
-            $scope.$apply();
-        }
-    });
-
     $scope.getFoodTime = function(d1) {
         return jQuery.timeago(d1);
     };
-
-    $scope.$on('getRelatedProductsWallmart-onsuccess', function(event, response) {
-        $scope.relatedProductsWallmart = response.items;
-        if (!$scope.$$phase) {
-            $scope.$apply();
-        }
-    });
 
 }]);
