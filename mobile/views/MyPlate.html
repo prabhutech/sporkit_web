@@ -1,20 +1,20 @@
 <div ng-controller="MyPlateController">
 
-        <div ng-repeat="food in foods" class="row-fluid tab-pane active" id="listview">
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <small class="pull-right time-stamp"><i class="fa fa-clock-o fa-fw"></i>{{getFoodTime(food.createdAt)}}</small>
-                    <h4><i class="fa fa-cutlery"></i>Zak ate...</h4>
-                    <h4 class="dish-name">{{food.attributes.name}}</h4>
-                    <h5><i class="fa fa-map-marker"></i><a href="#">{{food.attributes.restaurant.name}}</a></h5>
-                    <address>
-                        {{food.attributes.restaurant.location.display_address[1]}}
-                    </address>
-                    <img src="{{food.attributes.photo._url}}" class="food-photo" />
-                    <a href="" ng-click="sporkTheFood(food)" class="pull-right badge badge-warning" data-toggle="modal" data-target="#recipeModal" ng-click="findMatchingFoodFromPearson(food)"> <img src="../assets/spork.png" class="icon-spork" /> Sporkit </a>
-                    <hr class="clear" />
-                </div><!--/thumbnail-->
-            </div><!--/col-->
-        </div><!--/row-->
+    <div ng-repeat="food in foods" class="row-fluid" id="listview">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <small class="pull-right time-stamp"><i class="fa fa-clock-o fa-fw"></i>{{getFoodTime(food.createdAt)}}</small>
+                <h4><i class="fa fa-cutlery"></i>Zak ate...</h4>
+                <h4 class="dish-name">{{food.attributes.name}}</h4>
+                <h5><i class="fa fa-map-marker"></i><a href="#">{{food.attributes.restaurant.name}}</a></h5>
+                <address>
+                    {{food.attributes.restaurant.location.display_address[1]}}
+                </address>
+                <img src="{{food.attributes.photo._url}}" class="food-photo" />
+                <a href="" ng-click="sporkTheFood(food)" class="pull-right badge badge-warning" data-toggle="modal" data-target="#recipeModal" ng-click="findMatchingFoodFromPearson(food)"><i class="icon-spork-half"></i></a>
+                <hr class="clear" />
+            </div><!--/thumbnail-->
+        </div><!--/col-->
+    </div><!--/row-->
 
 </div><!--ng-controller-->

@@ -120,7 +120,7 @@ background-position: -40px -47px;
     text-shadow: 0 1px 1px #ccc, 0 0 3px #ccc;
     display: block;
     text-indent: -9999px;
-    background: url(../assets/logo.png) no-repeat top center;
+    background: url(../assets/logo-default.png) no-repeat top center;
     height: 42px;
     width: 421px;
     margin: 10px auto 0 auto;
@@ -258,12 +258,16 @@ background-position: -40px -47px;
 }
 .main-content .thumbnail .badge-warning {
     background-color: #d58512;
+    border-radius: 20px;
 }
 .main-content .thumbnail {
     background: white;
     padding: 10px 20px;
     margin-bottom: 20px;
     box-shadow: 0 3px 0 #ccc;
+}
+#listview .col-md-4 {
+    padding: 0px;
 }
 .thumbnail .caption p.short {
     font-size: 12px;
@@ -310,6 +314,14 @@ p.short:hover {
 }
 .main-content .thumbnail i {
     margin-right: 10px;
+}
+.main-content .thumbnail i.icon-spork-half {
+    margin-right: 0px;
+    font-size: 2em;
+}
+.icon-spork-half:before {
+    width: 18px;
+    margin-left: 2px;
 }
 .main-content .thumbnail .action-bar, .main-content .thumbnail .tags {
     padding: 10px 0px;
@@ -378,9 +390,12 @@ p.short:hover {
 .navbar-header span {
     margin: 7px 0px;
 }
+.navbar-header a i {
+    padding-top: 7px;
+}
 .logo {
     display: block;
-    width: 219px;
+    width: 150px;
     margin: 0px auto;
     padding: 0px;
     height: 43px;
@@ -392,10 +407,10 @@ p.short:hover {
     text-shadow: 0 1px 0 #d98301;
 }
 .navbar-brand {
-    width: 219px;
+    width: 150px;
     text-indent: -9999px;
-    background: url(../assets/logo.png) no-repeat left center;
-    height: 48px;
+    background: url(../assets/logo-mobile.png) no-repeat left center;
+    height: 29px;
     margin: 0px !important;
     padding: 5px 0px !important;
 }
@@ -1027,7 +1042,8 @@ input[type="text"] {
 }
 @media screen and (max-width: 767px) {
     .navbar-inner {
-        height: 70px !important;
+        height: 55px !important;
+        margin-bottom: 5px !important;
     }
     .nav-pills {
         margin: 10px auto 0 auto;
@@ -1037,7 +1053,8 @@ input[type="text"] {
         float: none !important;
     }
     .main-content {
-        margin-top: 80px;
+        margin-top: 70px;
+        padding: 0px !important;
     }
     .main-content h1 {
         text-align: center;
@@ -1091,9 +1108,6 @@ input[type="text"] {
         width: 100% !important;
         float: none !important;
         margin-top: 10px;
-    }
-    .main-content {
-        margin-top: 160px;
     }
     .main-content h1 {
         text-align: center;
