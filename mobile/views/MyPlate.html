@@ -7,12 +7,13 @@
                 <h4><img ng-src="http://graph.facebook.com/{{food.attributes.createdBy.attributes.fbUserData.id}}/picture?type=square"/>
                     {{food.attributes.createdBy.attributes.fbUserData.first_name}}  ate...</h4>
                 <h4 class="dish-name">{{food.attributes.name}}</h4>
-                <h5><i class="fa fa-map-marker"></i><a href="#">{{food.attributes.restaurant.name}}</a></h5>
+                <h5 ng-show="food.attributes.restaurant.name"><i class="fa fa-map-marker"></i><a href="#">{{food.attributes.restaurant.name}}</a></h5>
                 <address>
                     {{food.attributes.restaurant.location.display_address[1]}}
                 </address>
                 <img src="{{food.attributes.photo._url}}" class="food-photo" />
-                <a href="" ng-click="sporkTheFood(food)" class="pull-right badge badge-warning"><i class="icon-spork-half"></i>{{getNoOfSporksForFood(food)}}</a>
+                <a href="" ng-click="sporkTheFood(food)" class="pull-right badge badge-warning">
+                    <i class="icon-spork-half"></i>{{food.attributes.noOfSporks}}</a>
                 <hr class="clear" />
             </div><!--/thumbnail-->
         </div><!--/col-->
