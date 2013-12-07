@@ -9,9 +9,9 @@ function($scope, Facebook) {
     $scope.sporkTheFood = function(foodObj) {
         var food = new Foods();
         food.id = foodObj.id;
-
+        food.set("noOfSporks", {"__op":"Increment","amount":1});
+        food.save();
         var spork = new Sporks();
-
         var sporkQuery = new Parse.Query(Sporks);
         sporkQuery.equalTo("createdBy", currentUser);
         sporkQuery.equalTo("food", food);
@@ -30,7 +30,11 @@ function($scope, Facebook) {
                 console.log("Error: " + error.code + " " + error.message);
             }
         });
+        Facebook.getAllFoods();
+    };
 
+    $scope.getNoOfSporksForFood = function(food){
+        
     };
 
     $scope.$on('get-all-foods-onsuccess', function(event, response) {

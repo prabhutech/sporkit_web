@@ -27,8 +27,8 @@ SporkitServiceModule.service('Facebook', function($rootScope) {
         getAllFoods : function(user) {
             if (user) {
                 foodQuery.equalTo("createdBy", user);
-                foodQuery.include("createdBy");
             }
+            foodQuery.include("createdBy");
             foodQuery.find(function(response) {
                 createResponse('get-all-foods', response);
             });
@@ -36,35 +36,6 @@ SporkitServiceModule.service('Facebook', function($rootScope) {
         getLoginStatus : function() {
             FB.getLoginStatus(function(response) {
                 $rootScope.$broadcast('get-fb-login-status', response);
-            });
-        },
-        findMatchingFoodFromPearson : function(food) {
-            $.ajax({
-                'url' : 'http://api.pearson.com/kitchen-manager/v1/recipes?name-contains=' + food.attributes.name,
-                'dataType' : 'jsonp',
-                //'jsonpCallback' : 'cb',
-                'success' : function(data, textStats, XMLHttpRequest) {
-                    $rootScope.$broadcast('findMatchingFoodFromPearson-onsuccess', data);
-                }
-            });
-        },
-        getRecipeForPearsonFood : function(food) {
-            $.ajax({
-                'url' : food.url,
-                'dataType' : 'jsonp',
-                //'jsonpCallback' : 'cb',
-                'success' : function(data, textStats, XMLHttpRequest) {
-                    $rootScope.$broadcast('getRecipeForPearsonFood-onsuccess', data);
-                }
-            });
-        },
-        getRelatedProductsWallmart : function(food) {
-            $.ajax({
-                'url' : 'http://walmartlabs.api.mashery.com/v1/search?query=' + food.attributes.name + '&format=json&apiKey=vakres6za65mh5huj5s6javj',
-                'dataType' : 'jsonp',
-                'success' : function(data, textStats, XMLHttpRequest) {
-                    $rootScope.$broadcast('getRelatedProductsWallmart-onsuccess', data);
-                }
             });
         },
         callYelp : function(message) {
@@ -164,7 +135,7 @@ SporkitServiceModule.service('Facebook', function($rootScope) {
                     }
                     $rootScope.$broadcast('fb-login-onsuccess');
                     FB.api("/me", function(response) {
-                        if (response) {
+                        if (!response.error) {
                             console.dir(response);
                             var currentUser = Parse.User.current();
                             currentUser.set("fbUserData", response);
