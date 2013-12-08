@@ -245,11 +245,14 @@ background-position: -40px -47px;
     font-size: 12px;
 }
 .main-content .thumbnail img.food-photo {
-    margin: -23px 0px 0px 0px;
+    margin: 0px;
     height: 217px;
-    width: 308px;
+    width: 100%;
     display: block;
     overflow: hidden;
+    position: absolute;
+    top: 42px;
+    z-index: 0;
 }
 .main-content .thumbnail .icon-spork {
     margin-bottom: 0px;
@@ -257,12 +260,17 @@ background-position: -40px -47px;
 .main-content .thumbnail .badge-warning {
     background-color: #d58512;
     border-radius: 20px;
+    top: 4px;
+    position: relative;
+    right: 5px;
+    z-index: 2;
 }
 .main-content .thumbnail {
     background: white;
     padding: 0px;
     margin-bottom: 5px;
     border-radius: 0px;
+    height: 260px;
 }
 
 #listview .col-md-4 {
@@ -309,15 +317,32 @@ p.short:hover {
     font-size: 14px;
     margin: 0px;
 }
+.main-content .thumbnail .dish-bar {
+    border: none;
+    margin: 0px;
+    position: relative;
+    height: 80px;
+    z-index: 1;
+    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+    background: -o-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+    opacity: 0.8;
+}
 .main-content .thumbnail h4.dish-name {
     text-transform: capitalize;
     border: none;
-    padding-bottom: 3px;
     margin: 0px;
     position: relative;
     color: white;
-    background-color: #000;
-    opacity: 0.7;
+    top: -80px;
+    z-index: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    width: 250px;
 }
 .main-content .thumbnail h5 {
     text-transform: capitalize;
@@ -326,16 +351,38 @@ p.short:hover {
     margin: 0px;
     padding-left: 5px;
     font-size: 12px;
+    position: relative;
+    top: -75px;
+    color: white;
+    z-index: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    width: 250px;
+}
+.main-content .thumbnail h5 a {
+    color: white;
 }
 .main-content .thumbnail i {
     margin-right: 10px;
 }
 .main-content .thumbnail i.icon-spork-half {
     margin-right: 0px;
-    font-size: 2em;
+    font-size: 3em;
+}
+.main-content .thumbnail i span {
+    font-style: normal;
+    font-size: 40%;
+    color: #333;
+    position: absolute;
+    bottom: 17px;
+    right: 10px;
+    text-align: center;
+    width: 20px;
 }
 .icon-spork-half:before {
-    width: 18px;
+    width: 25px;
     margin-left: 2px;
 }
 .main-content .thumbnail .action-bar, .main-content .thumbnail .tags {
@@ -773,7 +820,7 @@ img.hungry {
 }
 .friend-ate {
     margin: 0px;
-    padding: 0px    :
+    padding: 0px             :
 }
 .friend-ate li, .friend-ate li a {
     list-style: none;
